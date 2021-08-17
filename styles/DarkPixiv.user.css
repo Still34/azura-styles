@@ -1,0 +1,68 @@
+/* ==UserStyle==
+@author       Still Hsu (https://stillu.cc)
+@description  Fixes incomplete sections of the official dark mode. This userstyle assumes you have the official dark mode enabled.
+@license      MIT
+@name         Dark Pixiv
+@namespace    domain("pixiv.net")
+@namespace    github.com/openstyles/stylus
+@homepageURL  https://github.com/Still34/azura-styles
+@updateURL    https://github.com/Still34/azura-styles/styles/DarkPixiv.user.css
+@version      1.0.0
+==/UserStyle== */
+@-moz-document domain("pixiv.net") {
+    :root {
+        --button-color: rgba(255, 255, 255, 0.36);
+        --text-artist-color: rgba(255, 255, 255, 0.68);
+        --text-color: hsl(200, 4%, 87%);
+        --text-color-highlight: rgba(255, 255, 255, 0.28);
+        --theme-color: rgb(31, 31, 31);
+        --theme-color-alt: rgba(255, 255, 255, 0.12);
+        --alert-success: hsl(156, 57%, 20%);
+        --alert-info: var(--alert-success);
+    }
+    
+    .gtm-work-post-button-in-header-click>span,
+    [role="presentation"] > div > div > div:nth-child(2n)>div>div:nth-child(2)>div a,
+    [role="presentation"] > div > div > div:nth-child(2n) li > a > div > *:nth-child(2) {
+        color: var(--text-artist-color);
+    }
+    [role="presentation"] > div > div > div:nth-child(2n)>div>div:nth-child(2)>div,
+    [role="presentation"] > div > div > div:nth-child(2n),
+    ._classic-footer,
+    .layout-body .column-menu,
+    #js-mount-point-header > div > div > div > div,
+    body{
+        background-color: var(--theme-color);
+        color: var(--text-color);
+    }
+    .layout-body a.ui-profile-popup {
+        color: var(--text-artist-color) !important;
+    }
+    .layout-body .menu-items li,
+    .layout-body .extra_off span {
+        color: var(--text-color) !important;
+    }
+    .layout-body .current,
+    .layout-body figcaption a {
+        color: var(--text-color);
+    }
+    [role="presentation"] > div > div > div:nth-child(2n)>div>div:nth-child(2)>div p,
+    [role="presentation"] > div > div > div:nth-child(2n) button,
+    [role="presentation"] > div > div > div:nth-child(2n) div > span,
+    [role="presentation"] > div > div > div:nth-child(2n) div > div a,
+    [role="presentation"] > div > div > div:nth-child(2n) li > a > div > *:nth-child(1),
+    [role="presentation"] > div > div > div:nth-child(2n) ul > li:nth-child(1n),
+    #js-mount-point-header button[class^="sc-"] {
+        color: var(--button-color);
+    }
+    .gtm-work-post-button-in-header-click{
+        background-color: var(--theme-color-alt);
+    }
+    #js-mount-point-header input[class^="sc-"],
+    .layout-body ._unit {
+        background-color: var(--theme-color-alt) !important;
+    }
+    #js-mount-point-header input[class^="sc-"]::placeholder {
+        color: var(--text-color-highlight) !important;
+    }
+}
