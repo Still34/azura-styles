@@ -1,6 +1,6 @@
 # AzuraStyles
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](/LICENSE)
 [![Twitter: StillAzureH](https://img.shields.io/twitter/follow/StillAzureH.svg?style=social)](https://twitter.com/StillAzureH)
 
 ## Supported Websites
@@ -8,7 +8,8 @@
 ### Dark Mode
 
 - Shopify admin backend
-    - [Install](styles/DarkShopify.user.css)
+    - ![Preview](resources/dark-shopify.png)
+    - [Install](raw/master/styles/DarkShopify.user.css)
 
 ## Author
 
