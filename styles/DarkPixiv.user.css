@@ -6,8 +6,8 @@
 @namespace    domain("pixiv.net")
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
-@updateURL    https://github.com/Still34/azura-styles/styles/DarkPixiv.user.css
-@version      1.0.1
+@updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkPixiv.user.css
+@version      1.0.2
 ==/UserStyle== */
 @-moz-document domain("pixiv.net") {
     :root {
