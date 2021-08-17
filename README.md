@@ -5,11 +5,12 @@
 
 ## Supported Websites
 
-### Dark Mode
+### Shopify (Dark)
 
-- Shopify admin backend
-    - ![Preview](resources/dark-shopify.png)
-    - [Install](raw/master/styles/DarkShopify.user.css)
+![Preview](resources/dark-shopify.png)
+
+[Install](raw/master/styles/DarkShopify.user.css)
+
 
 ## Author
 
