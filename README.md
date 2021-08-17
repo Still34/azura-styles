@@ -9,8 +9,7 @@
 
 ![Preview](resources/dark-shopify.png)
 
-[Install](raw/master/styles/DarkShopify.user.css)
-
+[Install](https://github.com/Still34/azura-styles/raw/master/styles/DarkShopify.user.css)
 
 ## Author
 
