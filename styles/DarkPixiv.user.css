@@ -7,7 +7,7 @@
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkPixiv.user.css
-@version      1.0.2
+@version      1.0.3
 ==/UserStyle== */
 @-moz-document domain("pixiv.net") {
     :root {
@@ -35,6 +35,7 @@
         background-color: var(--theme-color);
         color: var(--text-color);
     }
+    .self,
     .layout-body a.ui-profile-popup {
         color: var(--text-artist-color) !important;
     }
@@ -42,6 +43,11 @@
     .layout-body .extra_off span {
         color: var(--text-color) !important;
     }
+    #js-mount-point-discovery nav > div:nth-child(1) a[aria-current="page"] {
+        color: var(--theme-color);
+    }
+    #js-mount-point-discovery nav > div:nth-child(1) a,
+    #js-mount-point-discovery nav > div:nth-child(2) button,
     .layout-body .current,
     .layout-body figcaption a {
         color: var(--text-color);
@@ -55,6 +61,7 @@
     #js-mount-point-header button[class^="sc-"] {
         color: var(--button-color);
     }
+    #js-mount-point-discovery nav,
     .gtm-work-post-button-in-header-click {
         background-color: var(--theme-color-alt);
     }
