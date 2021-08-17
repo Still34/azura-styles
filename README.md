@@ -7,7 +7,15 @@
 
 ### Shopify (Dark)
 
+> Inverts the official color palette, making the dashboard a little more bearable.
+
 ![Preview](resources/dark-shopify.png)
+
+[Install](https://github.com/Still34/azura-styles/raw/master/styles/DarkShopify.user.css)
+
+### Pixiv (Dark)
+
+> Fixes the incomplete dark mode implementation on Pixiv. This userstyle assumes you have the official dark mode enabled.
 
 [Install](https://github.com/Still34/azura-styles/raw/master/styles/DarkShopify.user.css)
 
