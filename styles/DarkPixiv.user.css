@@ -4,18 +4,113 @@
 @license      MIT
 @name         Dark Pixiv
 @namespace    domain("pixiv.net")
+@namespace    domain("fanbox.cc")
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkPixiv.user.css
-@version      1.0.3
+@version      1.1.0
 ==/UserStyle== */
+@-moz-document domain("pixiv.net"),
+domain("fanbox.cc") {
+    :root {
+        --theme-color: hsl(240, 6%, 10%);
+        --theme-color-light: hsl(240, 6%, 15%);
+        --theme-color-dark: hsl(240, 6%, 5%);
+        --text-color: hsl(200, 4%, 85%);
+        --text-color-highlight: hsl(200, 4%, 95%);
+        --text-artist-color: rgba(255, 255, 255, 0.8);
+        --button-color: rgba(255, 255, 255, 0.36);
+    }
+    .dVqdAU,
+    .iaPvMv,
+    .bDrxzH,
+    .hIxVfd,
+    ._classic-footer,
+    .layout-body .column-menu,
+    [role="presentation"] > div > div > div:nth-child(2n) > div > div:nth-child(2) > div,
+    [role="presentation"] > div > div > div:nth-child(2n),
+    .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) a,
+    .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) div,
+    .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) a > div > div:nth-child(2),
+    .sc-1spzamr-2 > div > div:nth-child(3) > div > div > div article > div > div > div > div > div > div,
+    #js-mount-point-header > div > div > div > div,
+    body,
+    input,
+    .gCHCw {
+        background-color: var(--theme-color);
+        color: var(--text-color);
+    }
+}
+@-moz-document domain("fanbox.cc") {
+    .CsuiU,
+    .cMwppZ,
+    .PRFde,
+    .jBECPu,
+    .cUjmDC,
+    .sc-1vr3xke-1 a:hover,
+    .sc-1spzamr-2 > div > div:nth-child(1) > div > div:nth-child(3) a,
+    .sc-1spzamr-2 > div > div:nth-child(3) > div > div:nth-child(1) a,
+    .sc-1spzamr-2 > div > div:nth-child(3) > div > div:nth-child(1) > div > div,
+    .sc-1spzamr-2 > div > div:nth-child(3) > div > div:nth-child(2) > div > div > div,
+    .sc-1spzamr-2 > div > div:nth-child(3) > div > div > div:nth-child(1),
+    .sc-1spzamr-2 > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(3),
+    .sc-1spzamr-2 > div > div:nth-child(2) > div:nth-child(2),
+    .sc-1spzamr-2 > div > div:nth-child(2) > div:nth-child(2) a,
+    .sc-1spzamr-2 > div > div > div > div:nth-child(2) > div > div a,
+    .sc-1spzamr-2 > div > div > div:nth-child(2),
+    .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(1),
+    .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(1) div,
+    .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(2),
+    .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(2) > div,
+    .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) div,
+    .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(1),
+    [class^="sc-5gaq1h-"],
+    [class^="sc-60utt6-"] {
+        background-color: var(--theme-color-light);
+        color: var(--text-color);
+    }
+    .ibxppb {
+        mask-image: linear-gradient(to right, var(--theme-color), var(--theme-color) 20px, var(--theme-color) calc(100% - 20px), var(--theme-color));
+    }
+    .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) a > div > div,
+    .fiwBIs,
+    .fLqkaO,
+    .fUoEWu,
+    .dkBtow,
+    .iOvDoq,
+    .zygfY,
+    .kyfABD,
+    .hNxdbi,
+    .fhsqbC,
+    .bJbXnA,
+    .zfynY,
+    .bhjUcF,
+    .fQdrCD,
+    .cBkkKG,
+    .hJzpob,
+    .jmnhBW {
+        color: var(--text-color-highlight);
+    }
+    .sc-1spzamr-2 > div > div:nth-child(2) > div:nth-child(2) a > div:nth-child(3),
+    .dEnVco,
+    .jEjDAF,
+    .bivyGQ,
+    .eGqsle,
+    .Aldpn,
+    .jjXDpm,
+    .jWzPaa,
+    .dpGGiK,
+    .eDumdB,
+    .iDaTaT {
+        color: var(--text-color);
+    }
+    .iyJMIg,
+    .dNJoAF {
+        color: var(--text-artist-color);
+    }
+}
 @-moz-document domain("pixiv.net") {
     :root {
-        --button-color: rgba(255, 255, 255, 0.36);
-        --text-artist-color: rgba(255, 255, 255, 0.68);
-        --text-color: hsl(200, 4%, 87%);
-        --text-color-highlight: rgba(255, 255, 255, 0.28);
-        --theme-color: rgb(31, 31, 31);
         --theme-color-alt: rgba(255, 255, 255, 0.12);
         --alert-success: hsl(156, 57%, 20%);
         --alert-info: var(--alert-success);
@@ -25,15 +120,6 @@
     [role="presentation"] > div > div > div:nth-child(2n) > div > div:nth-child(2) > div a,
     [role="presentation"] > div > div > div:nth-child(2n) li > a > div > *:nth-child(2) {
         color: var(--text-artist-color);
-    }
-    [role="presentation"] > div > div > div:nth-child(2n) > div > div:nth-child(2) > div,
-    [role="presentation"] > div > div > div:nth-child(2n),
-    ._classic-footer,
-    .layout-body .column-menu,
-    #js-mount-point-header > div > div > div > div,
-    body {
-        background-color: var(--theme-color);
-        color: var(--text-color);
     }
     .self,
     .layout-body a.ui-profile-popup {
