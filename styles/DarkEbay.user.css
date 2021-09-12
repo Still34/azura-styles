@@ -1,0 +1,404 @@
+/* ==UserStyle==
+@author       Still Hsu (https://stillu.cc)
+@description  eBay is lame and doesn't have a coherent class names, so I did the hard work for you.
+@license      MIT
+@name         Dark eBay
+@namespace    domain("www.ebay.com")
+@namespace    domain("faccountsettings.ebay.com")
+@namespace    github.com/openstyles/stylus
+@homepageURL  https://github.com/Still34/azura-styles
+@updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkEbay.user.css
+@version      1.0.0
+==/UserStyle== */
+@-moz-document domain("www.ebay.com"), domain("accountsettings.ebay.com") {
+    :root {
+        --color-background-default: var(--theme-color);
+        --color-text-default: var(--text-color);
+        --theme-color: hsl(240, 6%, 10%);
+        --theme-color-light: hsl(240, 6%, 15%);
+        --theme-color-dark: hsl(240, 6%, 5%);
+        --dropdown-items-background-color: var(--theme-color-light);
+        --text-color: hsl(200, 4%, 85%);
+        --text-color-dark: hsl(200, 4%, 25%);
+        --text-color-light: hsl(200, 4%, 95%);
+        --text-color-white: hsl(200, 0%, 100%);
+        --text-color-error: hsl(360, 100%, 40%);
+        --text-color-anchor: hsl(225, 89%, 60%);
+        --dropdown-item-foreground-color: var(--text-color-light);
+        --button-primary-color: hsl(225, 89%, 30%);
+        --button-primary-background-color: var(--button-primary-color);
+        --button-primary-disabled: hsl(0, 0%, 22%);
+        --section-highlight-orange: hsl(15, 93%, 25%);
+        --section-highlight-green: hsl(148, 93%, 15%);
+        --section-highlight-lightgreen: hsl(150, 84%, 45%);
+    }
+    /* ======================== */
+    /* === Background color === */
+    /* ======================== */
+    button.btn--primary,
+    a.fake-btn--primary,
+    button.btn--primary:focus,
+    a.fake-btn--primary:focus,
+    button.btn--primary:hover,
+    a.fake-btn--primary:hover,
+    button.btn--primary:active,
+    a.fake-btn--primary:active {
+        background-color: var(--button-primary-color);
+        border-color: var(--button-primary-color);
+    }
+    button.btn--primary[disabled]:hover,
+    button.btn--primary[aria-disabled="true"]:hover,
+    button.btn--primary[disabled]:focus,
+    button.btn--primary[aria-disabled="true"]:focus,
+    button.btn--primary[disabled],
+    button.btn--primary[aria-disabled="true"] {
+        background-color: var(--button-primary-disabled);
+    }
+    .hl-mweb-text-banner,
+    .hl-loyalty {
+        border-color: var(--section-highlight-orange) !important;
+        background-color: var(--section-highlight-orange) !important;
+    }
+    .signout-banner-container,
+    .hl-full-bleed-banner__container {
+        border-color: var(--section-highlight-green) !important;
+        background-color: var(--section-highlight-green) !important;
+    }
+    a.fake-pill--primary, a.fake-pill--selected, button.pill--primary, button.pill--selected,
+    .gh-sch-prom#gh .btn.btn-ter,
+    a.fake-btn--primary,
+    .gh-sch-prom#gh .btn.btn-prim {
+        background-color: var(--button-primary-color);
+    }
+    .adv-s .btn-prim{
+        background: var(--button-primary-color);
+        
+    }
+    #gh-eb-Alerts-o,
+    .gh-flyout__menu,
+    /* Watchlist menu */
+    .gh-eb-active #gh-ug,
+    .gh-shop-active #gh-shop-a,
+    .gh-menu .gh-submenu,
+    /* My eBay dropdown menu */
+    #gh-eb-u-o,
+    /* User dropdown menu */
+    .s-item__link,
+    #glbfooter,
+    .b-module,
+    .tabs, .fake-tabs,
+    .b-img, .b-img img,
+    .b-listing.srp-list .s-item--bgcolored .s-item__image, .b-listing .s-item--bgcolored .s-item__image,
+    .s-item,
+    .b-info,
+    .srp-controls,
+    .srp-sort,
+    .b-tile,
+    .page-notice,
+    
+    .b-guidance--text .b-guidancecard__link,
+    .dne-itemtile,
+    .whitebg,
+    div.gh-o, div.gh-eb-o,
+    .whitebg .pagecontainer__leftnav .container,
+    .cusr-serv .article_main_container,
+    .white_background,
+    .my-container.item-list .container-options .list-bulk-actions,
+    .white-background,
+    /* Logout background */
+    .x-footer,
+    html > body #hlGlobalFooter,
+    body {
+        background-color: var(--theme-color);
+        color: var(--text-color);
+    }
+    #LeftPanel,
+    .gh-modal__menu,
+    .srp-controls__control--legacy,
+    .b-guidance--text .b-guidancecard__link,
+    .fake-tabs.srp-format-tabs,
+    #gh-cat-box {
+        background: var(--theme-color);
+    }
+    html>body{
+        background: var(--theme-color) !important;
+    }
+    #gf-f,
+    #gf-fbtn,
+    .ebayui-dne-banner-text,
+    .hl-cat-nav__flyout,
+    /* Homepage category dropdown menu */
+    .my-ebay .menu-list .selected,
+    .shipto .menu-button .expand-btn,
+    /* Ship to dropdown menu */
+    .shipto .fake-menu-button__menu, .shipto .menu-button__menu,
+    .merch-module.merch-module.merch-module .container_wrapper,
+    /* "Sponsored item" sections in individual listing */
+    .tab-content-m,
+    /* Item description */
+    .vi-swc-wrapper,
+    .srp-controls__control--legacy,
+    .card.ebayui-dne-item-featured-card--topDeals,
+    .gh-eb-li-a.gh-icon,
+    div.c-std,
+    ul.l-adv li a.selected,
+    .card.ebayui-dne-item-featured-card--topDeals > h2,
+    div.sbx-c div.rct-bb,
+    .gh-sch-prom #gh-topl .gh-t > a,
+    .cusr-serv .article_relate_box .article_relate,
+    .gh-sch-prom #gh-ug,
+    #gh .gh-acc-a2,
+    .flyout-notice,
+    .srp-view-options .btn, .srp-view-options button[type].btn,
+    .w2b,
+    .srp-main--isLarge .fake-tabs.srp-format-tabs li.fake-tabs__item--current,
+    #gh-top,
+    #gh-gb {
+        background-color: var(--theme-color-light);
+        color: var(--text-color);
+    }
+    div.title--dweb span.textbox,
+    div.title--dweb span.textbox input,
+    .article-search-input-container .flex-mode,
+    input[type="text"], input[type="password"], select, textarea,
+    input.textbox__control,
+    /* Input textbox */
+    .actPanel,
+    .cusr-serv .rowItem .columnItem,
+    .additionalTool,
+    .watchListCmp,
+    li.hl-cat-nav__js-show,
+    /* Homepage category button */
+    .gh-eb-active .gh-eb-li-a,
+    .gh-hvr:hover .gh-eb-li-a,
+    .gh-flyout-active .gh-eb-li-a,
+    #gh-cat-box,
+    .leftNavBar > ul li.current-link,
+    div.sbx-c h2.rct-bg,
+    #gh-ac-box {
+        background-color: var(--theme-color-dark);
+        color: var(--text-color);
+    }
+
+    /* ======================== */
+    /* === Border color === */
+    /* ======================== */
+    li.hl-cat-nav__js-show,
+    /* Homepage category button */
+    #gh-eb-u-o,
+    /* User dropdown menu */
+    #gh .gh-eb-active #gh-ug,
+    .gh-eb-active .gh-eb-li-a,
+    .gh-flyout__menu,
+    /* Watchlist menu */
+    #gh-ug,
+    .gh-sch-prom #gh-cat-box,
+    .gh-sch-prom #gh-cat,
+    .gh-sch-prom #gh-cat:hover,
+    .gh-sch-prom #gh-ac-box {
+        border-color: var(--theme-color-light);
+    }
+    #gh-eb-Alerts-o,
+    .gh-ui-6-5 .gh-hvr:hover .gh-eb-li-a,
+    .gh-ui-6-5 .gh-eb-active .gh-eb-li-a,
+    .gh-ui-6-5 .gh-eb-active #gh-ug,
+    .gh-ui-6-5 .gh-shop-active #gh-shop-a,
+    .gh-menu .gh-submenu,
+    /* My eBay dropdown menu */
+    .b-list ul > li,
+    .gh-sch-prom #gh-gb {
+        border-color: var(--theme-color-dark);
+    }
+    .signin-link {
+        border-color: var(--section-highlight-lightgreen);
+    }
+    /* #ccc */
+    /* #ddd */
+    /* #e5e5e5 */
+    #gf-fbtn,
+    .rct-hm,
+    .ebayui-dne-item-pattern-card.ebayui-dne-item-pattern-card-no-padding > .row > .col .item:first-child,
+    .ebayui-dne-item-pattern-card.ebayui-dne-item-pattern-card-no-padding > .row > .col .item:last-child,
+    .ebayui-dne-featured-with-padding .card.ebayui-dne-item-featured-card--topDeals > h2,
+    .ebayui-dne-featured-with-padding .card.ebayui-dne-item-featured-card--topDeals,
+    .hl-cat-nav,
+    div.sbx-c div.rct-bb,
+    .rct-c,
+    .ebayui-dne-featured-with-padding .ebayui-dne-item-featured-card > .row > .col .dne-itemtile,
+    .gh-sch-prom#gh-gb ,
+    .ebayui-dne-banner-text,
+    .gh-sch-prom #gh-gb,
+    .gh-sch-prom.gh-w .gh-divider-l,
+    .gh-ui-6-5.gh-sch-prom.gh-w .gh-divider-l,
+    .gh-w li.gh-divider,
+    .gh-sch-prom.gh-w li.gh-divide,
+    .gh-sch-prom #gh-top,
+    .x-flyout .flyout-notice,
+    .srp-controls__control--legacy,
+    .b-guidance--text .b-guidancecard__link,
+    .fake-tabs.srp-format-tabs,
+    .srp-grid .s-item,
+    .s-item.s-item--large .s-item__wrapper,
+    .whitebg .b-module,
+    .srp-main--isLarge .b-list.srp-grid > .srp-controls{
+        border-color: var(--text-color-dark);
+    }
+
+    /* ======================== */
+    /* === Text color === */
+    /* ======================== */
+    a,
+    a:active,
+    a:link,
+    ul#bc a:link,
+    .srp-controls--selected-value,
+    html a:link,
+    .g-novisited a:visited {
+        color: var(--text-color-anchor);
+    }
+    .mbg a:link,
+    .fol-widget > a{
+        color: var(--text-color-anchor) !important;
+        filter: brightness(90%);
+    }
+    .signin-link:active,
+    .signin-link:visited,
+    .signin-link:link,
+    .signout-banner-text {
+        color: var(--section-highlight-lightgreen);
+    }
+    .leftNavBar > ul li a,
+    .pgCenter div,
+    .gh-eb-li-a,
+    .leftNavBar > ul li,
+    .gh-ui-6-5 #gh-eb a {
+        color: var(--text-color) !important;
+    }
+    /* #555 */
+    a.vi-ds3-ter-a, a.vi-ds3-ter-a:hover, a.vi-ds3-ter-a:visited, a.vi-ds3-ter-a:link, .vi-covRow a, .vi-covRow a:hover, .vi-covRow a:visited, .vi-covRow a:hover,
+    .sh-DlvryDtl,
+    #gh .btn.btn-ter,
+    .itemAttr,
+    html body,
+    .hl-cat-nav li a,
+    .ebayui-dne-item-pattern-card .dne-pattern-title,
+    li.fake-tabs__item > a,
+    #domain-nav,
+    #gh-sbc a,
+    .ghfe-ds6,
+    .my-ebay .menu-list a,
+    body #CenterPanel div.actPanel div.convPrice, body #CenterPanel div.actPanel div.convPrice span,
+    .gh-info {
+        color: var(--text-color);
+    }
+    /* #666 */
+    .iti-eu-label,
+    .b-breadcrumb__text,
+    .gf-if-a,
+    .iti-eu-bld-gry{
+        color: var(--text-color);
+        filter: brightness(110%);
+    }
+    /* #333 */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    .cont,
+    .dne-show-less.dne-itemtile .dne-show-more-link > a, .dne-show-more.dne-itemtile .dne-show-more-link > a,
+    .condText,
+    .dne-itemtile-detail .dne-itemtile-original-price .itemtile-price-bold,
+    .dne-itemtile-detail > a > .dne-itemtile-title,
+    .dne-itemtile-detail .dne-itemtile-price span,
+    #gh-sbc h3, #gh-sbc h3 a,
+    .gh-w,
+    .it-ttl,
+    .sh-title,
+    .si-ttl,
+    .vi-swc-title h2,
+    .ebayui-dne-banner-text > h2,
+    .vi-swc-header,
+    .cusr-serv .rowItem .columnItem .footNote,
+    .b-info__pricerange, .b-info__price, .b-info__trendprice,
+    .b-info__title,
+    .hl-cat-nav__flyout li a:hover,
+    .pgHeading > h1,
+    .vi-hd-ops #CenterPanel .ap-numWatcher.ap-watchCount-hot *, .vi-hd-ops #CenterPanel .vi-qtyS-hot, .vi-hd-ops #CenterPanel span.vi-qtyS-hot a, .vi-hd-ops #CenterPanel .vi-qtyA-hot, .vi-hd-ops #CenterPanel .topinfo a.vi-bidC-hot *, .vi-hd-ops #CenterPanel .topinfo a.vi-bidC-hot:hover,
+    .hl-cat-nav__active span,
+    .hl-cat-nav__flyout h4,
+    .topTitle h1,
+    .sh-svc,
+    .w2b-subhead,
+    .b-guidancecard__title,
+    .srp-main--isLarge .fake-tabs.srp-format-tabs li.fake-tabs__item--current .srp-format-tabs-h2,
+    .vi-hd-ops .mm-as,
+    .vi-hd-ops .vi-eu-region .mm-as,
+.vi-hd-ops .ebaylocale_en_GB .mm-as,
+    .pagecontainer__leftnav .b-categorynavigations .b-textlink, .pagecontainer__leftnav .b-speciallinks .b-textlink,
+    .b-title,
+    .skin-large .b-breadcrumb ol li a,
+    .mm-op,
+    #gh-un,
+    .gh-item-bold {
+        color: var(--text-color-light);
+    }
+    #gh-eb-u-o #gh-uid {
+        color: var(--text-color-light) !important;
+    }
+    
+    .cusr-serv .article_main_container .article_main p,
+    body #CenterPanel .actPanel .vi-price span, body #CenterPanel .actPanel .mm-dp div *{
+    
+        color: var(--text-color-white);
+    }
+
+    /* ======================== */
+    /* === Invert color === */
+    /* ======================== */
+    .gh-sch-prom#gh .btn.btn-ter:hover,
+    .gh-sch-prom#gh .btn.btn-prim:hover,
+    button.btn--primary:focus,
+    a.fake-btn--primary:focus,
+    button.btn--primary:hover,
+    a.fake-btn--primary:hover,
+    button.btn--primary:active,
+    a.fake-btn--primary:active,
+    button.btn--primary[disabled]:hover,
+    button.btn--primary[aria-disabled="true"]:hover,
+    button.btn--primary[disabled]:focus,
+    button.btn--primary[aria-disabled="true"]:focus {
+        filter: brightness(120%);
+    }
+    ul.l-adv li a,
+    .cusr-serv .rowItem .columnItem .columnHead{
+        filter: brightness(200%);
+    }
+    .textbox__icon,
+    .dne-itemtile-detail .dne-itemcard-ebayplus img,
+    .content-heading--font,
+    ul.l-adv li a:hover,
+    .cusr-serv .rowItem .columnItem .content,
+    .srp-view-options .btn:hover, .srp-view-options button[type].btn:hover,
+    .srp-main--isLarge .srp-sort .btn:hover,
+    .shipto .flag-wrapper .flag-country-name,
+    gh-shipto-label span,
+    .shipto__notice .inline-notice__content,
+    .brm-pill.brm-pill--applied,
+    .brm .brm__flyout .x-flyout__button,
+    .s-item__watchheart-text--watching svg, .s-item__watchheart-text--watch svg,
+    .s-item__title,
+    .s-item__price,
+    .is .lable,
+    .sh-sch-ng .schbox-label,
+    .item-tile .item-info .item-info__title,
+    .item-tile .item-info .item-info__price,
+    .hl-item__displayPrice,
+    button.btn--secondary,
+    a.fake-btn--secondary,
+    .heading,
+    .gh-ui-6-5 .gh-cart-icon,
+    .gh-ui-6-5 #gh-Alerts-i {
+        filter: invert(1);
+    }
+}
