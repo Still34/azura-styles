@@ -13,6 +13,14 @@
 
 [Install](https://github.com/Still34/azura-styles/raw/master/styles/DarkShopify.user.css)
 
+### eBay (Dark)
+
+> Inverts the official color palette. eBay is lame and doesn't have a coherent class names, so I did the hard work for you.
+
+![Preview](resources/dark-ebay.png)
+
+[Install](https://github.com/Still34/azura-styles/raw/master/styles/DarkEbay.user.css)
+
 ### Pixiv (Dark)
 
 > Fixes the incomplete dark mode implementation on Pixiv. This userstyle assumes you have the official dark mode enabled.
