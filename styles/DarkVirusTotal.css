@@ -1,0 +1,207 @@
+/* ==UserStyle==
+@author       Still Hsu (https://stillu.cc)
+@description  VirusTotal, but less eyestraining. Remember to install 'Stylus Shadow DOM Support', otherwise some sections of the site will not render properly!
+@license      MIT
+@name         Dark VirusTotal
+@namespace    url(https?://virustotal.com/*)
+@namespace    github.com/openstyles/stylus
+@homepageURL  https://github.com/Still34/azura-styles
+@updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkVirusTotal.user.css
+@version      1.0.0
+==/UserStyle== */
+@-moz-document domain("virustotal.com") {
+    :root {
+        --theme-border: hsl(0, 0%, 25%);
+        --theme-code-header: hsl(0, 0%, 25%);
+        --theme-code-block: hsl(0, 0%, 18%);
+        --theme-info-background: hsl(259, 31%, 26%);
+        --theme-info-background-glow-high-contrast: hsl(259, 31%, 26%);
+        --theme-success-background: hsl(135, 88%, 16%);
+        --theme-success-background-glow-high-contrast: hsl(135, 88%, 16%);
+        --theme-danger-background: hsl(359, 100%, 19%);
+        --theme-danger-background-glow-high-contrast: hsl(359, 100%, 19%);
+        --theme-danger-dark: hsl(355, 85%, 95%);
+        --theme-warning-background: hsl(38, 66%, 25%);
+        --theme-warning-background-glow-high-contrast: hsl(38, 66%, 25%);
+        --neutral-grey: hsl(0, 0%, 50%);
+        --bg-color: hsl(212, 10%, 13%);
+        --bg-color-dark: hsl(212, 10%, 8%);
+        --bg-color-light: hsl(212, 10%, 20%);
+        --bg-color-light-alt: hsl(212, 10%, 16%);
+        --bg-color-highlight: hsl(221, 30%, 20%);
+        --bg-color-orange: hsl(36, 53%, 38%);
+        --bg-color-blue-light: hsl(226, 46%, 50%);
+        --bg-color-blue: hsl(226, 46%, 25%);
+        --bg-color-green: hsl(106, 46%, 25%);
+        --bg-color-red: hsl(346, 46%, 25%);
+        --bg-color-blue-dark: hsl(226, 64%, 15%);
+        --bg-color-dropdown: var(--bg-color-light-alt);
+        --link-color: hsl(0, 0, 0);
+        --text-color: #f1f1f1;
+        --text-color-dark: #bbb;
+        --black: var(--bg-color);
+        --white: var(--text-color);
+        --vt-grey-25: var(--bg-color-light);
+        --vt-grey-50: var(--bg-color-light-alt);
+        --vt-grey-100: #4d4d4d;
+        --vt-grey-200: #666666;
+        --vt-grey-300: #9b9b9b;
+        --vt-grey-400: #b3b3b3;
+        --vt-grey-500: #ccc;
+        --vt-grey-600: #e6e6e6;
+        --vt-grey-700: #f2f2f2;
+        --vt-grey-800: #f9f9f9;
+        --vt-grey-900: #fdfdfd;
+        --vt-blue-900: #ecefff;
+        --vt-blue-800: #d6dcfe;
+        --vt-blue-700: #b0b8fe;
+        --vt-blue-600: #8895fe;
+        --vt-blue-500: #6071ff;
+        --vt-blue-400: #3a4eff;
+        --vt-blue-300: #2b3bbf;
+        --vt-blue-200: #1d2780;
+        --vt-blue-100: #17206a;
+        --vt-blue-50: #11174c;
+        --vt-black-1: #eee;
+        --vt-white: var(--bg-color);
+        --vt-graph-list-zebra-striped-background: var(--bg-color-light-alt);
+        --vt-modal-bg-color: var(--bg-color-light-alt);
+        --vt-ui-popover-content-background: var(--bg-color-light-alt);
+        --vt-ui-popover-header-background: var(--bg-color-light);
+    }
+    input,
+    textarea,
+    pre {
+        color: var(--text-color);
+        border: 1px solid var(--theme-border);
+        background-color: var(--theme-code-block);
+    }
+    .alert-info {
+        background-color: var(--theme-info-background);
+        border: 1px solid var(--theme-info-background-glow-high-contrast);
+    }
+    .alert-danger {
+        background-color: var(--theme-danger-background);
+        border: 1px solid var(--theme-danger-background-glow-high-contrast);
+    }
+    .alert-success {
+        background-color: var(--theme-success-background);
+        border: 1px solid var(--theme-success-background-glow-high-contrast);
+    }
+    .alert-warning {
+        background-color: var(--theme-warning-background);
+        border: 1px solid var(--theme-warning-background-glow-high-contrast);
+    }
+    .alert {
+        color: var(--text-color);
+    }
+    .google-visualization-table-table,
+    .google-visualization-table-tr-head,
+    .matches-table > .matches-row:nth-child(1n) {
+        background: var(--bg-color);
+        color: var(--text-color);
+    }
+    .article-body a {
+        color: var(--vt-blue-600);
+    }
+    .gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet,
+    .gs-fileFormatType,
+    .gs-webResult div.gs-visibleUrl-short,
+    .gs-webResult.gs-result a.gs-title:link,
+    .gs-webResult.gs-result a.gs-title:link b,
+    .gs-imageResult a.gs-title:link,
+    .gs-imageResult a.gs-title:link b {
+        color: var(--vt-black-1);
+    }
+    .gsc-above-wrapper-area {
+        border-bottom: 1px solid var(--bg-color-light-alt);
+    }
+    .gsc-control-cse,
+    .gsc-webResult.gsc-result,
+    .gsc-results .gsc-imageResult,
+    .gsc-webResult.gsc-result:hover {
+        background: var(--bg-color-light);
+        color: var(--text-color);
+        border-color: var(--bg-color-light-alt);
+    }
+    .tabs-chip,
+    .article-body pre,
+    .google-visualization-table-tr-odd,
+    .matches-table > .matches-row:nth-child(2n) {
+        background: var(--bg-color-light);
+        color: var(--text-color);
+    }
+    .row header,
+    .row header .item,
+    .gsc-control-cse,
+    .gsc-webResult.gsc-result,
+    .gsc-results .gsc-imageResult,
+    vt-ui-expandable,
+    [slot="content"],
+    #listRow,
+    .vt-selected#examples,
+    .matches-table,
+    #toolbar > .tabs > .vt-selected,
+    .google-visualization-table-tr-even,
+    .see-all-action {
+        background: var(--bg-color-light-alt);
+        color: var(--text-color);
+    }
+
+    .row section {
+        border-color: var(--vt-grey-600);
+    }
+    .row header .description {
+        color: var(--text-color) !important;
+    }
+    .row {
+        background: var(--bg-color-light-alt) !important;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--vt-grey-800);
+    }
+    h1 small,
+    h2 small,
+    h3 small,
+    h4 small,
+    h5 small,
+    h6 small {
+        color: var(--vt-grey-500);
+    }
+    body,
+    .view[view-in-right-drawer],
+    .tabs.list-content,
+    .vtilogo-wrapper > .vtilogo,
+    .article-content,
+    .article-container {
+        background: var(--bg-color) !important;
+        color: var(--vt-black-1);
+    }
+    #message,
+    #detections,
+    #detections .detection {
+        background: var(--bg-color-dark);
+    }
+    .dropdown-content,
+    vt-ui-selector.tabs.list-content {
+        background: var(--vt-white) !important;
+    }
+    .hero-title,
+    #checkboxLabel {
+        color: var(--vt-black-1);
+    }
+    vt-ui-dropdown,
+    #toolbar,
+    textarea,
+    sign-in-view .input-wrapper,
+    sign-in-view .input-wrapper *,
+    #multiSearchTextArea {
+        color: var(--vt-grey-900);
+        background: var(--vt-white);
+    }
+}

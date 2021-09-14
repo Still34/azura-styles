@@ -21,6 +21,14 @@
 
 [Install](https://github.com/Still34/azura-styles/raw/master/styles/DarkEbay.user.css)
 
+### VirusTotal (Dark)
+
+> VirusTotal, but less eyestraining. Remember to install 'Stylus Shadow DOM Support', otherwise some sections of the site will not render properly!
+
+![Preview](resources/dark-virustotal.png)
+
+[Install](https://github.com/Still34/azura-styles/raw/master/styles/DarkVirusTotal.user.css)
+
 ### Pixiv (Dark)
 
 > Fixes the incomplete dark mode implementation on Pixiv. This userstyle assumes you have the official dark mode enabled.
