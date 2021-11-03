@@ -8,7 +8,7 @@
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkPixiv.user.css
-@version      1.1.0
+@version      1.1.1
 ==/UserStyle== */
 @-moz-document domain("pixiv.net"),
 domain("fanbox.cc") {
@@ -21,12 +21,10 @@ domain("fanbox.cc") {
         --text-artist-color: rgba(255, 255, 255, 0.8);
         --button-color: rgba(255, 255, 255, 0.36);
     }
-    .dVqdAU,
-    .iaPvMv,
-    .bDrxzH,
-    .hIxVfd,
     ._classic-footer,
     .layout-body .column-menu,
+    .sc-1qrwin2-4,
+    [class^="sc-pqbh61-"],
     [role="presentation"] > div > div > div:nth-child(2n) > div > div:nth-child(2) > div,
     [role="presentation"] > div > div > div:nth-child(2n),
     .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) a,
@@ -35,18 +33,13 @@ domain("fanbox.cc") {
     .sc-1spzamr-2 > div > div:nth-child(3) > div > div > div article > div > div > div > div > div > div,
     #js-mount-point-header > div > div > div > div,
     body,
-    input,
-    .gCHCw {
+    textarea,
+    input {
         background-color: var(--theme-color);
         color: var(--text-color);
     }
 }
 @-moz-document domain("fanbox.cc") {
-    .CsuiU,
-    .cMwppZ,
-    .PRFde,
-    .jBECPu,
-    .cUjmDC,
     .sc-1vr3xke-1 a:hover,
     .sc-1spzamr-2 > div > div:nth-child(1) > div > div:nth-child(3) a,
     .sc-1spzamr-2 > div > div:nth-child(3) > div > div:nth-child(1) a,
@@ -64,7 +57,14 @@ domain("fanbox.cc") {
     .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(2) > div,
     .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) div,
     .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(1),
+    [class^="sc-1iucokn"],
     [class^="sc-5gaq1h-"],
+    [class^="sc-vy9p7q-"],
+    [class^="sc-107nulo-"],
+    [class^="sc-1mdohqc-"],
+    [class^="sc-15k0f9e-"],
+    [class^="sc-1qdhoex-"],
+    [class^="sc-1upaq18-"],
     [class^="sc-60utt6-"] {
         background-color: var(--theme-color-light);
         color: var(--text-color);
@@ -72,41 +72,30 @@ domain("fanbox.cc") {
     .ibxppb {
         mask-image: linear-gradient(to right, var(--theme-color), var(--theme-color) 20px, var(--theme-color) calc(100% - 20px), var(--theme-color));
     }
+    .sc-1pize7g-0 {
+        background-color: var(--theme-color);
+        color: var(--text-color);
+        border-color: var(--theme-color-light);
+    }
+    .sc-dg0qgs-8,
+    .sc-dg0qgs-4,
     .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) a > div > div,
-    .fiwBIs,
-    .fLqkaO,
-    .fUoEWu,
-    .dkBtow,
-    .iOvDoq,
-    .zygfY,
-    .kyfABD,
-    .hNxdbi,
-    .fhsqbC,
-    .bJbXnA,
-    .zfynY,
-    .bhjUcF,
-    .fQdrCD,
-    .cBkkKG,
-    .hJzpob,
-    .jmnhBW {
+    .sc-1fx6qz5-5,
+    [class^="sc-1cvn8o2-"],
+    [class^="sc-ar8j54-"] {
         color: var(--text-color-highlight);
     }
-    .sc-1spzamr-2 > div > div:nth-child(2) > div:nth-child(2) a > div:nth-child(3),
-    .dEnVco,
-    .jEjDAF,
-    .bivyGQ,
-    .eGqsle,
-    .Aldpn,
-    .jjXDpm,
-    .jWzPaa,
-    .dpGGiK,
-    .eDumdB,
-    .iDaTaT {
+    .sc-1n102ak-2,
+    .sc-1fx6qz5-6,
+    .sc-1spzamr-2 > div > div:nth-child(2) > div:nth-child(2) a > div:nth-child(3) {
         color: var(--text-color);
     }
-    .iyJMIg,
-    .dNJoAF {
+    [class^="sc-1k1puon-"],
+    [class^="sc-rhsppu-"] {
         color: var(--text-artist-color);
+    }
+    .sc-1a32jrd-0 {
+        filter: invert(1);
     }
 }
 @-moz-document domain("pixiv.net") {
