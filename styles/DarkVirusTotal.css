@@ -7,7 +7,7 @@
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://userstyles.world/api/style/1094.user.css
-@version      1.1.1
+@version      1.1.2
 ==/UserStyle== */
 @-moz-document domain("virustotal.com") {
     :root {
@@ -97,6 +97,7 @@
     }
     .google-visualization-table-table,
     .google-visualization-table-tr-head,
+    .content>.row:nth-child(2n),
     .matches-table > .matches-row:nth-child(1n) {
         background: var(--bg-color);
         color: var(--text-color);
