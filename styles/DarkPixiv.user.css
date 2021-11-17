@@ -8,30 +8,30 @@
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkPixiv.user.css
-@version      1.1.1
+@version      1.1.2
 ==/UserStyle== */
 @-moz-document domain("pixiv.net"),
 domain("fanbox.cc") {
     :root {
         --theme-color: hsl(240, 6%, 10%);
+        --theme-color-tinted: hsl(240, 10%, 10%);
         --theme-color-light: hsl(240, 6%, 15%);
-        --theme-color-dark: hsl(240, 6%, 5%);
+        --theme-color-dark: hsl(240, 15%, 2%);
+        --theme-color-tinted-dark: hsl(240, 6%, 10%);
         --text-color: hsl(200, 4%, 85%);
         --text-color-highlight: hsl(200, 4%, 95%);
         --text-artist-color: rgba(255, 255, 255, 0.8);
         --button-color: rgba(255, 255, 255, 0.36);
     }
+
     ._classic-footer,
     .layout-body .column-menu,
     .sc-1qrwin2-4,
     [class^="sc-pqbh61-"],
-    [role="presentation"] > div > div > div:nth-child(2n) > div > div:nth-child(2) > div,
-    [role="presentation"] > div > div > div:nth-child(2n),
-    .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) a,
-    .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) div,
-    .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) a > div > div:nth-child(2),
-    .sc-1spzamr-2 > div > div:nth-child(3) > div > div > div article > div > div > div > div > div > div,
-    #js-mount-point-header > div > div > div > div,
+    [role="presentation"]>div>div>div:nth-child(2n)>div>div:nth-child(2)>div,
+    [role="presentation"]>div>div>div:nth-child(2n),
+    .sc-1spzamr-2>div>div:nth-child(3)>div>div>div article>div>div>div>div>div>div,
+    #js-mount-point-header>div>div>div>div,
     body,
     textarea,
     input {
@@ -39,65 +39,104 @@ domain("fanbox.cc") {
         color: var(--text-color);
     }
 }
+
 @-moz-document domain("fanbox.cc") {
+
     .sc-1vr3xke-1 a:hover,
-    .sc-1spzamr-2 > div > div:nth-child(1) > div > div:nth-child(3) a,
-    .sc-1spzamr-2 > div > div:nth-child(3) > div > div:nth-child(1) a,
-    .sc-1spzamr-2 > div > div:nth-child(3) > div > div:nth-child(1) > div > div,
-    .sc-1spzamr-2 > div > div:nth-child(3) > div > div:nth-child(2) > div > div > div,
-    .sc-1spzamr-2 > div > div:nth-child(3) > div > div > div:nth-child(1),
-    .sc-1spzamr-2 > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(3),
-    .sc-1spzamr-2 > div > div:nth-child(2) > div:nth-child(2),
-    .sc-1spzamr-2 > div > div:nth-child(2) > div:nth-child(2) a,
-    .sc-1spzamr-2 > div > div > div > div:nth-child(2) > div > div a,
-    .sc-1spzamr-2 > div > div > div:nth-child(2),
-    .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(1),
-    .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(1) div,
-    .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(2),
-    .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(2) > div,
-    .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) div,
-    .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(1),
-    [class^="sc-1iucokn"],
+    .sc-1spzamr-2>div:nth-child(2)>div>div>div:nth-child(2) a,
+    .sc-1spzamr-2>div:nth-child(2)>div>div>div:nth-child(2) div,
+    .sc-1spzamr-2>div:nth-child(2)>div>div>div:nth-child(2) a>div>div:nth-child(2),
+    .sc-1spzamr-2>div>div:nth-child(1)>div>div:nth-child(3) a,
+    .sc-1spzamr-2>div>div:nth-child(3)>div>div:nth-child(1) a,
+    .sc-1spzamr-2>div>div:nth-child(3)>div>div:nth-child(1)>div>div,
+    .sc-1spzamr-2>div>div:nth-child(3)>div>div:nth-child(2)>div>div>div,
+    .sc-1spzamr-2>div>div:nth-child(3)>div>div>div:nth-child(1),
+    .sc-1spzamr-2>div>div:nth-child(2)>div:nth-child(1)>div:nth-child(3),
+    .sc-1spzamr-2>div>div:nth-child(2)>div:nth-child(2),
+    .sc-1spzamr-2>div>div:nth-child(2)>div:nth-child(2) a,
+    .sc-1spzamr-2>div>div>div>div:nth-child(2)>div>div a,
+    .sc-1spzamr-2>div>div>div:nth-child(2),
+    .sc-1spzamr-2>div>div>div:nth-child(2)>div:nth-child(1),
+    .sc-1spzamr-2>div>div>div:nth-child(2)>div:nth-child(1) div,
+    .sc-1spzamr-2>div>div>div:nth-child(2)>div:nth-child(2),
+    .sc-1spzamr-2>div>div>div:nth-child(2)>div:nth-child(2)>div,
+    .sc-1spzamr-2>div>div>div:nth-child(2)>div:nth-child(2)>div>div:nth-child(2) div,
+    .sc-1spzamr-2>div:nth-child(2)>div>div>div:nth-child(1),
+    .sc-rsje43-1,
     [class^="sc-5gaq1h-"],
-    [class^="sc-vy9p7q-"],
     [class^="sc-107nulo-"],
-    [class^="sc-1mdohqc-"],
     [class^="sc-15k0f9e-"],
     [class^="sc-1qdhoex-"],
     [class^="sc-1upaq18-"],
+    [class^="sc-1la22eh-"],
+    [class^="sc-1ml52e6-"],
     [class^="sc-60utt6-"] {
         background-color: var(--theme-color-light);
         color: var(--text-color);
     }
-    .ibxppb {
-        mask-image: linear-gradient(to right, var(--theme-color), var(--theme-color) 20px, var(--theme-color) calc(100% - 20px), var(--theme-color));
-    }
-    .sc-1pize7g-0 {
+
+    .sc-1iucokn-2,
+    [class^="sc-1mdohqc-"],
+    [class^="sc-15hz7mo-"],
+    [class^="sc-1vr3xke-"] {
         background-color: var(--theme-color);
         color: var(--text-color);
-        border-color: var(--theme-color-light);
     }
+
+    [class^="sc-17po76l-"],
+    [class^="sc-1vtp2n2-"],
+    [class^="sc-1bjj922-"],
+    [class^="sc-vy9p7q-"] {
+        background-color: inherit;
+        color: var(--text-color);
+    }
+
+    .sc-1spzamr-2>div:nth-child(2)>div>div>div:nth-child(2) a,
+    .sc-1spzamr-2>div:nth-child(2)>div>div>div:nth-child(2) div,
+    .sc-1spzamr-2>div:nth-child(2)>div>div>div:nth-child(2) a>div>div:nth-child(2) {
+        border-color: var(--theme-color-dark);
+    }
+
+    [class^="sc-1pize7g-"] {
+        background-color: inherit;
+        color: var(--text-color);
+    }
+
+    [class^="sc-1pize7g-"]:hover {
+        background-color: var(--theme-color-tinted-dark);
+        color: var(--text-color);
+    }
+
     .sc-dg0qgs-8,
+    .sc-1vjtieq-8,
+    .sc-1hrx8k8-5,
     .sc-dg0qgs-4,
-    .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) a > div > div,
+    .sc-1spzamr-2>div:nth-child(2)>div>div>div:nth-child(2) a>div>div,
     .sc-1fx6qz5-5,
     [class^="sc-1cvn8o2-"],
+    [class^="sc-54q0ri-"],
+    [class^="sc-1qlo9f6-"],
+    [class^="sc-1jkoy8r-"],
     [class^="sc-ar8j54-"] {
         color: var(--text-color-highlight);
     }
+
     .sc-1n102ak-2,
     .sc-1fx6qz5-6,
-    .sc-1spzamr-2 > div > div:nth-child(2) > div:nth-child(2) a > div:nth-child(3) {
+    .sc-1spzamr-2>div>div:nth-child(2)>div:nth-child(2) a>div:nth-child(3) {
         color: var(--text-color);
     }
+
     [class^="sc-1k1puon-"],
     [class^="sc-rhsppu-"] {
         color: var(--text-artist-color);
     }
+
     .sc-1a32jrd-0 {
         filter: invert(1);
     }
 }
+
 @-moz-document domain("pixiv.net") {
     :root {
         --theme-color-alt: rgba(255, 255, 255, 0.12);
@@ -105,45 +144,53 @@ domain("fanbox.cc") {
         --alert-info: var(--alert-success);
     }
 
-    .gtm-work-post-button-in-header-click > span,
-    [role="presentation"] > div > div > div:nth-child(2n) > div > div:nth-child(2) > div a,
-    [role="presentation"] > div > div > div:nth-child(2n) li > a > div > *:nth-child(2) {
+    .gtm-work-post-button-in-header-click>span,
+    [role="presentation"]>div>div>div:nth-child(2n)>div>div:nth-child(2)>div a,
+    [role="presentation"]>div>div>div:nth-child(2n) li>a>div>*:nth-child(2) {
         color: var(--text-artist-color);
     }
+
     .self,
     .layout-body a.ui-profile-popup {
         color: var(--text-artist-color) !important;
     }
+
     .layout-body .menu-items li,
     .layout-body .extra_off span {
         color: var(--text-color) !important;
     }
-    #js-mount-point-discovery nav > div:nth-child(1) a[aria-current="page"] {
+
+    #js-mount-point-discovery nav>div:nth-child(1) a[aria-current="page"] {
         color: var(--theme-color);
     }
-    #js-mount-point-discovery nav > div:nth-child(1) a,
-    #js-mount-point-discovery nav > div:nth-child(2) button,
+
+    #js-mount-point-discovery nav>div:nth-child(1) a,
+    #js-mount-point-discovery nav>div:nth-child(2) button,
     .layout-body .current,
     .layout-body figcaption a {
         color: var(--text-color);
     }
-    [role="presentation"] > div > div > div:nth-child(2n) > div > div:nth-child(2) > div p,
-    [role="presentation"] > div > div > div:nth-child(2n) button,
-    [role="presentation"] > div > div > div:nth-child(2n) div > span,
-    [role="presentation"] > div > div > div:nth-child(2n) div > div a,
-    [role="presentation"] > div > div > div:nth-child(2n) li > a > div > *:nth-child(1),
-    [role="presentation"] > div > div > div:nth-child(2n) ul > li:nth-child(1n),
+
+    [role="presentation"]>div>div>div:nth-child(2n)>div>div:nth-child(2)>div p,
+    [role="presentation"]>div>div>div:nth-child(2n) button,
+    [role="presentation"]>div>div>div:nth-child(2n) div>span,
+    [role="presentation"]>div>div>div:nth-child(2n) div>div a,
+    [role="presentation"]>div>div>div:nth-child(2n) li>a>div>*:nth-child(1),
+    [role="presentation"]>div>div>div:nth-child(2n) ul>li:nth-child(1n),
     #js-mount-point-header button[class^="sc-"] {
         color: var(--button-color);
     }
+
     #js-mount-point-discovery nav,
     .gtm-work-post-button-in-header-click {
         background-color: var(--theme-color-alt);
     }
+
     #js-mount-point-header input[class^="sc-"],
     .layout-body ._unit {
         background-color: var(--theme-color-alt) !important;
     }
+
     #js-mount-point-header input[class^="sc-"]::placeholder {
         color: var(--text-color-highlight) !important;
     }
