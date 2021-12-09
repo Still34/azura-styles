@@ -95,6 +95,7 @@
     .alert {
         color: var(--text-color);
     }
+    .view.drawer,
     .google-visualization-table-table,
     .google-visualization-table-tr-head,
     .content>.row:nth-child(2n),
@@ -125,7 +126,6 @@
         color: var(--text-color);
         border-color: var(--bg-color-light-alt);
     }
-    .view.drawer,
     .tabs-chip,
     .article-body pre,
     .google-visualization-table-tr-odd,
