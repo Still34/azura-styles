@@ -8,7 +8,7 @@
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkPixiv.user.css
-@version      1.1.4
+@version      1.1.5
 ==/UserStyle== */
 @-moz-document domain("pixiv.net"),
 domain("fanbox.cc") {
@@ -16,6 +16,7 @@ domain("fanbox.cc") {
         --theme-color: hsl(240, 6%, 10%);
         --theme-color-tinted: hsl(240, 10%, 10%);
         --theme-color-light: hsl(240, 6%, 15%);
+        --theme-color-lighter: hsl(240, 6%, 25%);
         --theme-color-dark: hsl(240, 15%, 2%);
         --theme-color-tinted-dark: hsl(240, 6%, 10%);
         --text-color: hsl(200, 4%, 85%);
@@ -25,8 +26,6 @@ domain("fanbox.cc") {
     }
     ._classic-footer,
     .layout-body .column-menu,
-    .sc-1qrwin2-4,
-    [class^="sc-pqbh61-"],
     [role="presentation"] > div > div > div:nth-child(2n) > div > div:nth-child(2) > div,
     [role="presentation"] > div > div > div:nth-child(2n),
     .sc-1spzamr-2 > div > div:nth-child(3) > div > div > div article > div > div > div > div > div > div,
@@ -39,27 +38,48 @@ domain("fanbox.cc") {
     }
 }
 @-moz-document domain("fanbox.cc") {
+    :root {
+        --tag-color: hsl(0, 0%, 4%);
+        --tag-text-color: hsl(0, 0%, 60%);
+    }
     .sc-1vr3xke-1 a:hover,
     .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) a,
     .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) div,
     .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) a > div > div:nth-child(2),
     .sc-1spzamr-2 > div > div:nth-child(1) > div > div:nth-child(3) a,
-    .sc-1spzamr-2 > div > div:nth-child(3) > div > div:nth-child(1) a,
-    .sc-1spzamr-2 > div > div:nth-child(3) > div > div:nth-child(1) > div > div,
-    .sc-1spzamr-2 > div > div:nth-child(3) > div > div:nth-child(2) > div > div > div,
-    .sc-1spzamr-2 > div > div:nth-child(3) > div > div > div:nth-child(1),
     .sc-1spzamr-2 > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(3),
-    .sc-1spzamr-2 > div > div:nth-child(2) > div:nth-child(2),
     .sc-1spzamr-2 > div > div:nth-child(2) > div:nth-child(2) a,
     .sc-1spzamr-2 > div > div > div > div:nth-child(2) > div > div a,
-    .sc-1spzamr-2 > div > div > div:nth-child(2),
-    .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(1),
-    .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(1) div,
-    .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(2),
-    .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(2) > div,
     .sc-1spzamr-2 > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) div,
-    .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(1),
     .sc-rsje43-1,
+    .ilARNI:hover,
+    .hCbSLB:hover,
+    .klGtCy:hover,
+    .cNuemT,
+    .kNJoBt,
+    .jGnnBR,
+    .cxuAap,
+    .idFWuF,
+    .iIuDwG,
+    .cCunVE,
+    .bXZGeR,
+    .gjqSEA,
+    .cAnFzr,
+    .iNgRKe,
+    .ccwVZT,
+    .kNyYsd,
+    .tHqFl,
+    .iKpuTL,
+    .hOOGVP,
+    .bUtphD,
+    .bBjgob,
+    .gEnXiR,
+    .kMkTig,
+    .cRCYfh,
+    .engYGy,
+    .ekWPgD,
+    .hoQJac,
+    .sc-ydbi01-0,
     [class^="sc-5gaq1h-"],
     [class^="sc-107nulo-"],
     [class^="sc-15k0f9e-"],
@@ -67,62 +87,132 @@ domain("fanbox.cc") {
     [class^="sc-1upaq18-"],
     [class^="sc-1la22eh-"],
     [class^="sc-1g79x2n-"],
-    [class^="sc-1ml52e6-"],
-    [class^="sc-60utt6-"] {
+    [class^="sc-1ml52e6-"] {
         background-color: var(--theme-color-light);
         color: var(--text-color);
     }
     .sc-1iucokn-2,
+    .sc-1rz3iob-3,
+    .sc-1fbbjcd-0,
+    .sc-pkc1yn-3,
+    .sc-12gqj6l-1,
+    .sc-60utt6-0,
+    .sc-1s3p844-4,
+    .sc-1hrx8k8-0,
+    .sc-1a2an84-1,
+    .sc-176m54m-11,
+    .sc-jvire4-5,
+    .sc-jvire4-3,
+    .sc-176m54m-0,
+    .fIfUli,
+    .sc-dzfsti-0,
+    .ksvpbn,
+    .eEcqU,
+    .gqxKXT,
+    .eBkMFn,
+    .bwbyDj,
     [class^="sc-1mdohqc-"],
-    [class^="sc-15hz7mo-"],
     [class^="sc-53cont-"],
     [class^="sc-gszx3t-"],
     [class^="sc-7h3cqw-"],
-    [class^="sc-1vr3xke-"]{
+    [class^="sc-1vr3xke-"] {
         background-color: var(--theme-color);
         color: var(--text-color);
     }
+    .kliFTP,
     [class^="sc-16ys89y-"],
     [class^="sc-17po76l-"],
     [class^="sc-1vtp2n2-"],
     [class^="sc-1bjj922-"],
     [class^="sc-10kvd4a-"],
-    [class^="sc-vy9p7q-"]{
+    [class^="sc-vy9p7q-"] {
         background-color: inherit;
         color: var(--text-color);
     }
     .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) a,
     .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) div,
-    .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) a > div > div:nth-child(2){
+    .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) a > div > div:nth-child(2) {
         border-color: var(--theme-color-dark);
     }
+    .hBlOlR,
     .sc-y75v7w-1,
     .sc-dg0qgs-8,
     .sc-1vjtieq-8,
     .sc-1hrx8k8-5,
+    .jSYZwM,
     .sc-dg0qgs-4,
     .sc-1spzamr-2 > div:nth-child(2) > div > div > div:nth-child(2) a > div > div,
     .sc-1fx6qz5-5,
+    .dmlAiO,
+    .hiOpqA,
+    .gcUAiq,
+    .bEFToT,
+    .jKYDSU,
+    .lhxhfh,
+    .ixAfYO,
+    .gnyZII,
+    .bkMHIH,
+    .kdDWYB,
+    .dUdgVZ,
+    .iCWiAG,
+    .GrQMv,
+    .cxGAcT,
     [class^="sc-1vjtieq-"],
     [class^="sc-1cvn8o2-"],
     [class^="sc-54q0ri-"],
     [class^="sc-1qlo9f6-"],
     [class^="sc-1jkoy8r-"],
-    [class^="sc-ar8j54-"]{
+    [class^="sc-ar8j54-"] {
         color: var(--text-color-highlight);
     }
+    .hgBkDi,
+    .giESIN,
     .sc-1n102ak-2,
+    .iBSOLO,
+    .keOZFm,
     .sc-1fx6qz5-6,
     .sc-1spzamr-2 > div > div:nth-child(2) > div:nth-child(2) a > div:nth-child(3) {
         color: var(--text-color);
     }
     [class^="sc-1k1puon-"],
-    [class^="sc-rhsppu-"]{
+    [class^="sc-rhsppu-"] {
         color: var(--text-artist-color);
     }
+    .ctBYvO,
+    .dZQNBp,
+    .kFzTLs,
     .sc-lmxeny-2,
-    .sc-1a32jrd-0{
+    .sc-1a32jrd-0 {
         filter: invert(1);
+    }
+    .kqsZAJ,
+    .jldnYc {
+        filter: blur(10px) brightness(50%);
+    }
+    .jTdpSf,
+    .fenDQq {
+        color: var(--tag-text-color);
+        background-color: var(--tag-color);
+    }
+    .csoNnv {
+        --heart-color: hsl(350, 73%, 36%);
+        color: var(--heart-color);
+        border-color: var(--heart-color);
+        background-color: var(--tag-color);
+    }
+    .kmJVGn {
+        background-color: var(--tag-color);
+        color: var(--tag-text-color);
+    }
+    .bpeuuG,
+    .hBlOlR {
+        background: none;
+    }
+    .ORPUg {
+        filter: brightness(95%) contrast(95%);
+    }
+    .eSqRFn > .dMigcK {
+        filter: brightness(60%) saturate(50%);
     }
 }
 @-moz-document domain("pixiv.net") {
@@ -131,7 +221,9 @@ domain("fanbox.cc") {
         --alert-success: hsl(156, 57%, 20%);
         --alert-info: var(--alert-success);
     }
-
+    .wallpaper {
+        filter: brightness(30%) blur(1em);
+    }
     .gtm-work-post-button-in-header-click > span,
     [role="presentation"] > div > div > div:nth-child(2n) > div > div:nth-child(2) > div a,
     [role="presentation"] > div > div > div:nth-child(2n) li > a > div > *:nth-child(2) {
@@ -140,6 +232,15 @@ domain("fanbox.cc") {
     .self,
     .layout-body a.ui-profile-popup {
         color: var(--text-artist-color) !important;
+    }
+    .signup-form .input-field,
+    .signup-form div,
+    .signup-form {
+        color: var(--text-color);
+        background-color: var(--theme-color-light);
+    }
+    .signup-form .input-field {
+        border-color: var(--theme-color-light);
     }
     .layout-body .menu-items li,
     .layout-body .extra_off span {
