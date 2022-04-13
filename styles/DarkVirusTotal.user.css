@@ -7,7 +7,7 @@
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://userstyles.world/api/style/1094.user.css
-@version      1.1.2
+@version      1.1.3
 ==/UserStyle== */
 @-moz-document domain("virustotal.com") {
     :root {
@@ -95,6 +95,11 @@
     .alert {
         color: var(--text-color);
     }
+    file-view,
+    download-zip,
+    vt-ui-main-generic-report,
+    vt-ui-file-card,
+    #drawer>div.content,
     .view.drawer,
     .google-visualization-table-table,
     .google-visualization-table-tr-head,
@@ -133,6 +138,7 @@
         background: var(--bg-color-light);
         color: var(--text-color);
     }
+    
     .row header,
     .row header .item,
     .gsc-control-cse,

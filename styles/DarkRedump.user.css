@@ -1,0 +1,155 @@
+/* ==UserStyle==
+@author       Still Hsu (https://stillu.cc)
+@description  Fixes the atrocious design choice of Redump
+@license      MIT
+@name         Dark Redump
+@namespace    domain("redump.org")
+@namespace    github.com/openstyles/stylus
+@homepageURL  https://github.com/Still34/azura-styles
+@updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkRedump.user.css
+@version      1.0.0
+==/UserStyle== */
+@-moz-document domain("redump.org") {
+    :root {
+        --theme-border: hsl(0, 0%, 25%);
+        --theme-code-header: hsl(0, 0%, 25%);
+        --theme-code-block: hsl(0, 0%, 18%);
+        --theme-info-background: hsl(259, 31%, 26%);
+        --theme-info-background-glow-high-contrast: hsl(259, 31%, 26%);
+        --theme-success-background: hsl(135, 88%, 16%);
+        --theme-success-background-glow-high-contrast: hsl(135, 88%, 16%);
+        --theme-danger-background: hsl(359, 100%, 19%);
+        --theme-danger-background-glow-high-contrast: hsl(359, 100%, 19%);
+        --theme-danger-dark: hsl(355, 85%, 95%);
+        --theme-warning-background: hsl(38, 66%, 25%);
+        --theme-warning-background-glow-high-contrast: hsl(38, 66%, 25%);
+        --neutral-grey: hsl(0, 0%, 50%);
+        --bg-color: hsl(212, 10%, 15%);
+        --bg-color-dark: hsl(240, 6%, 5%);
+        --bg-color-light: hsl(240, 6%, 10%);
+        --bg-color-light-alt: hsl(212, 10%, 18%);
+        --bg-color-highlight: hsl(221, 30%, 25%);
+        --bg-color-orange: hsl(36, 53%, 38%);
+        --bg-color-blue-light: hsl(226, 46%, 50%);
+        --bg-color-blue: hsl(226, 46%, 25%);
+        --bg-color-green: hsl(106, 46%, 25%);
+        --bg-color-red: hsl(346, 46%, 25%);
+        --bg-color-blue-dark: hsl(226, 64%, 15%);
+        --bg-color-dropdown: var(--bg-color-light-alt);
+        --link-color: hsl(0, 0, 0);
+        --text-color: hsl(200, 4%, 85%);
+        --text-color-dark: hsl(200, 4%, 25%);
+        --black: var(--bg-color);
+        --white: var(--text-color);
+    }
+    /* #ffffff */
+    html,
+    body,
+    .tools,
+    #online {
+        background: var(--bg-color);
+    }
+    h3,
+    blockquote,
+    .mainlinks {
+        background-color: var(--bg-color);
+    }
+    /* #fcfcfc */
+    /* #f9fafa */
+    .textblock,
+    .menu {
+        background: var(--bg-color-light);
+    }
+    .menu a.menu-selected,
+    .submenu,
+    .game,
+    .extra,
+    .statistics,
+    .nohover,
+    .dvd,
+    .tracks,
+    .ssranges,
+    .libcrypt,
+    .pvd,
+    .header,
+    .bca,
+    .rings {
+        background-color: var(--bg-color-light);
+    }
+    /* #e5e5e5 */
+    .menu a.menu-selected,
+    .submenu,
+    #footer,
+    .gamesblock,
+    td.havemiss,
+    th.havemiss,
+    .tools,
+    .game,
+    .extra,
+    .tracks,
+    .ssranges,
+    .libcrypt,
+    .pvd,
+    .header,
+    .bca,
+    .rings,
+    .dvd,
+    .statistics,
+    #online,
+    .textblock {
+        border-color: var(--bg-color-dark);
+    }
+
+    /* #f1f1f1 */
+    .games tr:hover,
+    .tracks th,
+    .tracks tr:hover,
+    .libcrypt tr:hover,
+    .pvd tr:hover,
+    .header tr:hover,
+    .bca tr:hover,
+    .ssranges tr:hover,
+    .rings tr:hover,
+    .dvd tr:hover,
+    .libcrypt th,
+    .pvd th,
+    .header th,
+    .bca th,
+    .rings th,
+    .ssranges th,
+    .statistics th {
+        background-color: var(--bg-color-light-alt);
+    }
+
+    /* #202020 */
+    body,
+    .menu a,
+    .menu a:link,
+    .menu a:visited,
+    #quicksearch:focus,
+    .games td a,
+    .games td a:link,
+    .games td a:visited,
+    .games th a,
+    .games th a:link,
+    .games th a:hover,
+    .submenu a,
+    .submenu a:link,
+    .submenu a:visited,
+    .menu a:visited,
+    .textblock {
+        color: var(--text-color);
+    }
+    a,
+    a:link,
+    a:visited {
+        color: #50adff
+    }
+
+    img[src^="/images/status/"] {
+        mix-blend-mode: color;
+    }
+    #header {
+        mix-blend-mode: multiply;
+    }
+}
