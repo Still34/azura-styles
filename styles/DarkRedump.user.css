@@ -7,7 +7,7 @@
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkRedump.user.css
-@version      1.0.0
+@version      1.1.0
 ==/UserStyle== */
 @-moz-document domain("redump.org") {
     :root {
@@ -50,6 +50,8 @@
         background: var(--bg-color);
     }
     h3,
+    .mediawiki .wikitable th,
+    .mediawiki input[type="search"],
     blockquote,
     .mainlinks {
         background-color: var(--bg-color);
@@ -60,6 +62,12 @@
     .menu {
         background: var(--bg-color-light);
     }
+    .mediawiki #footer,
+    .mediawiki #content,
+    .mediawiki .pBody,
+    #brd-head,
+    .main-content,
+    .gen-content,
     .menu a.menu-selected,
     .submenu,
     .game,
@@ -77,6 +85,8 @@
         background-color: var(--bg-color-light);
     }
     /* #e5e5e5 */
+    .mediawiki .wikitable td,
+    .mediawiki .wikitable th,
     .menu a.menu-selected,
     .submenu,
     #footer,
@@ -99,8 +109,42 @@
     .textblock {
         border-color: var(--bg-color-dark);
     }
+    .mediawiki *,
+
+    .mediawiki #pagehistory li.selected,
+    .mediawiki #pagehistory li,
+    .main-subhead,
+    .main-item,
+    .main-item li,
+    .main-item div,
+    td,
+    .gen-content,
+    .main-content {
+        border-color: var(--bg-color-light-alt);
+    }
+    .mediawiki #content,
+    .mediawiki #toc,
+    .mediawiki .toc,
+    .mediawiki .mw-warning {
+        border-color: var(--bg-color-light);
+    }
+    .mediawiki table.wikitable,
+    .mediawiki .mw-search-formheader,
+    .mediawiki #toc,
+    .mediawiki .toc,
+    .mediawiki .mw-warning {
+        background-color: var(--bg-color-dropdown);
+    }
+    .mediawiki input[type="submit"],
+    .mediawiki input.historysubmit,
+    .mediawiki textarea,
+    .mediawiki pre {
+        filter: invert(1);
+    }
 
     /* #f1f1f1 */
+    .mediawiki .catlinks,
+    .main-subhead,
     .games tr:hover,
     .tracks th,
     .tracks tr:hover,
@@ -120,9 +164,34 @@
     .statistics th {
         background-color: var(--bg-color-light-alt);
     }
+    .mediawiki #pagehistory li.selected,
+    .main-item.sticky {
+        background-color: var(--bg-color-red);
+    }
+    .hn {
+        background-color: inherit;
+    }
 
     /* #202020 */
+    .mediawiki table.wikitable,
+    .mediawiki .wikitable th,
+    .mediawiki .mw-search-formheader div.search-types ul li.current a,
     body,
+    .mediawiki input[type="search"],
+    .mediawiki #footer,
+    .mediawiki #content,
+    .mediawiki h1,
+    .mediawiki h2,
+    .mediawiki h3,
+    .mediawiki h4,
+    .mediawiki h5,
+    .mediawiki h6,
+    ul li strong,
+    [for^="fld"],
+    #brd-head,
+    #brd-head a,
+    #brd-head a:link,
+    #brd-head a:visited,
     .menu a,
     .menu a:link,
     .menu a:visited,
@@ -140,6 +209,7 @@
     .textblock {
         color: var(--text-color);
     }
+    .mediawiki #bodyContent a.external,
     a,
     a:link,
     a:visited {
@@ -149,6 +219,7 @@
     img[src^="/images/status/"] {
         mix-blend-mode: color;
     }
+    .mediawiki #p-logo,
     #header {
         mix-blend-mode: multiply;
     }
