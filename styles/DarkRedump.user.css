@@ -7,7 +7,7 @@
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkRedump.user.css
-@version      1.1.0
+@version      1.2.0
 ==/UserStyle== */
 @-moz-document domain("redump.org") {
     :root {
@@ -50,6 +50,7 @@
         background: var(--bg-color);
     }
     h3,
+    #brd-wrap .postbody,
     .mediawiki .wikitable th,
     .mediawiki input[type="search"],
     blockquote,
@@ -62,10 +63,16 @@
     .menu {
         background: var(--bg-color-light);
     }
+    #brd-wrap .post,
+    #brd-wrap #brd-head,
+    #brd-wrap .entry-content #brd-wrap .quotebox,
+    #brd-wrap .entry-content .codebox,
+    #brd-wrap samp,
+    #brd-wrap code,
+    #brd-wrap pre,
     .mediawiki #footer,
     .mediawiki #content,
     .mediawiki .pBody,
-    #brd-head,
     .main-content,
     .gen-content,
     .menu a.menu-selected,
@@ -110,7 +117,6 @@
         border-color: var(--bg-color-dark);
     }
     .mediawiki *,
-
     .mediawiki #pagehistory li.selected,
     .mediawiki #pagehistory li,
     .main-subhead,
@@ -122,12 +128,18 @@
     .main-content {
         border-color: var(--bg-color-light-alt);
     }
+    #brd-wrap textarea,
+    #brd-wrap *,
     .mediawiki #content,
     .mediawiki #toc,
     .mediawiki .toc,
     .mediawiki .mw-warning {
         border-color: var(--bg-color-light);
     }
+    #brd-wrap .posthead,
+    #brd-wrap .posthead .hn,
+    #brd-wrap .post-options,
+    #brd-wrap textarea,
     .mediawiki table.wikitable,
     .mediawiki .mw-search-formheader,
     .mediawiki #toc,
@@ -163,6 +175,9 @@
     .ssranges th,
     .statistics th {
         background-color: var(--bg-color-light-alt);
+    }
+    #brd-wrap .attachments {
+        background-color: var(--bg-color-blue);
     }
     .mediawiki #pagehistory li.selected,
     .main-item.sticky {
