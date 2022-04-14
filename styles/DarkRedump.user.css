@@ -7,7 +7,7 @@
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkRedump.user.css
-@version      1.2.0
+@version      1.2.1
 ==/UserStyle== */
 @-moz-document domain("redump.org") {
     :root {
@@ -59,6 +59,7 @@
     }
     /* #fcfcfc */
     /* #f9fafa */
+    .gamesblock,
     .textblock,
     .menu {
         background: var(--bg-color-light);
