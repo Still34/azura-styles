@@ -7,7 +7,7 @@
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkRedump.user.css
-@version      1.2.1
+@version      1.2.2
 ==/UserStyle== */
 @-moz-document domain("redump.org") {
     :root {
@@ -42,101 +42,116 @@
         --black: var(--bg-color);
         --white: var(--text-color);
     }
+
     /* #ffffff */
     html,
     body,
     .tools,
+    #brd-wrap #rules-content,
+    #brd-wrap input[id^="fld"],
+    #brd-wrap input[type="email"]:active,
+    #brd-wrap input[type="email"]:focus,
+    #brd-wrap input[type="number"]:active,
+    #brd-wrap input[type="number"]:focus,
+    #brd-wrap input[type="password"]:active,
+    #brd-wrap input[type="password"]:focus,
+    #brd-wrap input[type="search"]:active,
+    #brd-wrap input[type="search"]:focus,
+    #brd-wrap input[type="text"]:active,
+    #brd-wrap input[type="text"]:focus,
+    #brd-wrap input[type="url"]:active,
+    #brd-wrap input[type="url"]:focus,
+    #brd-wrap textarea:active,
+    #brd-wrap textarea:focus,
     #online {
         background: var(--bg-color);
     }
-    h3,
-    #brd-wrap .postbody,
+    .mainlinks,
     .mediawiki .wikitable th,
     .mediawiki input[type="search"],
+    #brd-wrap .postbody,
     blockquote,
-    .mainlinks {
+    h3 {
         background-color: var(--bg-color);
     }
+
     /* #fcfcfc */
     /* #f9fafa */
+    #brd-wrap .main-frm .ct-group,
+    #brd-wrap #brd-announcement,
     .gamesblock,
     .textblock,
     .menu {
         background: var(--bg-color-light);
     }
+    .bca,
+    .dvd,
+    .extra,
+    .game,
+    .gen-content,
+    .header,
+    .libcrypt,
+    .main-content,
+    .mediawiki .pBody,
+    .mediawiki #content,
+    .mediawiki #footer,
+    .menu a.menu-selected,
+    .nohover,
+    .pvd,
+    .rings,
+    .ssranges,
+    .statistics,
+    .submenu,
+    .tracks,
+    #brd-wrap .entry-content .codebox,
+    #brd-wrap .entry-content #brd-wrap .quotebox,
     #brd-wrap .post,
     #brd-wrap #brd-head,
-    #brd-wrap .entry-content #brd-wrap .quotebox,
-    #brd-wrap .entry-content .codebox,
-    #brd-wrap samp,
     #brd-wrap code,
     #brd-wrap pre,
-    .mediawiki #footer,
-    .mediawiki #content,
-    .mediawiki .pBody,
-    .main-content,
-    .gen-content,
-    .menu a.menu-selected,
-    .submenu,
-    .game,
-    .extra,
-    .statistics,
-    .nohover,
-    .dvd,
-    .tracks,
-    .ssranges,
-    .libcrypt,
-    .pvd,
-    .header,
-    .bca,
-    .rings {
+    #brd-wrap samp {
         background-color: var(--bg-color-light);
     }
+    .mediawiki .mw-warning .mediawiki .toc,
+    .mediawiki #content,
+    .mediawiki #toc,
+    #brd-wrap *,
+    #brd-wrap textarea {
+        border-color: var(--bg-color-light);
+    }
+
     /* #e5e5e5 */
+    #brd-wrap th,
+    td.havemiss,
+    th.havemiss {
+        background-color: var(--bg-color-dark);
+    }
+    .bca,
+    .dvd,
+    .extra,
+    .game,
+    .gamesblock,
+    .header,
+    .libcrypt,
     .mediawiki .wikitable td,
     .mediawiki .wikitable th,
     .menu a.menu-selected,
-    .submenu,
-    #footer,
-    .gamesblock,
-    td.havemiss,
-    th.havemiss,
-    .tools,
-    .game,
-    .extra,
-    .tracks,
-    .ssranges,
-    .libcrypt,
     .pvd,
-    .header,
-    .bca,
     .rings,
-    .dvd,
+    .ssranges,
     .statistics,
+    .submenu,
+    .textblock,
+    .tools,
+    .tracks,
+    #footer,
     #online,
-    .textblock {
+    td.havemiss,
+    th.havemiss {
         border-color: var(--bg-color-dark);
     }
-    .mediawiki *,
-    .mediawiki #pagehistory li.selected,
-    .mediawiki #pagehistory li,
-    .main-subhead,
-    .main-item,
-    .main-item li,
-    .main-item div,
-    td,
-    .gen-content,
-    .main-content {
-        border-color: var(--bg-color-light-alt);
-    }
-    #brd-wrap textarea,
-    #brd-wrap *,
-    .mediawiki #content,
-    .mediawiki #toc,
-    .mediawiki .toc,
-    .mediawiki .mw-warning {
-        border-color: var(--bg-color-light);
-    }
+
+    /* alt color */
     #brd-wrap .posthead,
     #brd-wrap .posthead .hn,
     #brd-wrap .post-options,
@@ -148,16 +163,11 @@
     .mediawiki .mw-warning {
         background-color: var(--bg-color-dropdown);
     }
-    .mediawiki input[type="submit"],
-    .mediawiki input.historysubmit,
-    .mediawiki textarea,
-    .mediawiki pre {
-        filter: invert(1);
-    }
 
     /* #f1f1f1 */
     .mediawiki .catlinks,
     .main-subhead,
+    #brd-wrap td,
     .games tr:hover,
     .tracks th,
     .tracks tr:hover,
@@ -177,53 +187,99 @@
     .statistics th {
         background-color: var(--bg-color-light-alt);
     }
+    .gen-content,
+    .main-content,
+    .main-item div,
+    .main-item li,
+    .main-item,
+    .main-subhead,
+    .mediawiki *,
+    .mediawiki #pagehistory li,
+    .mediawiki #pagehistory li.selected,
+    td {
+        border-color: var(--bg-color-light-alt);
+    }
+
+    /* blue */
     #brd-wrap .attachments {
         background-color: var(--bg-color-blue);
+    }
+
+    /* red */
+    .mediawiki .textblock {
+        background-color: var(--bg-color-red) !important;
     }
     .mediawiki #pagehistory li.selected,
     .main-item.sticky {
         background-color: var(--bg-color-red);
     }
-    .hn {
-        background-color: inherit;
-    }
 
-    /* #202020 */
-    .mediawiki table.wikitable,
-    .mediawiki .wikitable th,
-    .mediawiki .mw-search-formheader div.search-types ul li.current a,
+    /* white or #202020 */
     body,
-    .mediawiki input[type="search"],
-    .mediawiki #footer,
+    .games td a,
+    .games td a:link,
+    .games td a:visited,
+    .games th a,
+    .games th a:hover,
+    .games th a:link,
+    .mediawiki .mw-search-formheader div.search-types ul li.current a,
+    .mediawiki .wikitable th,
     .mediawiki #content,
+    .mediawiki #footer,
     .mediawiki h1,
     .mediawiki h2,
     .mediawiki h3,
     .mediawiki h4,
     .mediawiki h5,
     .mediawiki h6,
-    ul li strong,
-    [for^="fld"],
-    #brd-head,
-    #brd-head a,
-    #brd-head a:link,
-    #brd-head a:visited,
+    .mediawiki input[type="search"],
+    .mediawiki table.wikitable,
     .menu a,
     .menu a:link,
     .menu a:visited,
-    #quicksearch:focus,
-    .games td a,
-    .games td a:link,
-    .games td a:visited,
-    .games th a,
-    .games th a:link,
-    .games th a:hover,
+    .menu a:visited,
     .submenu a,
     .submenu a:link,
     .submenu a:visited,
-    .menu a:visited,
+    [for^="fld"],
+    #brd-head a,
+    #brd-head a:link,
+    #brd-head a:visited,
+    #brd-head,
+    #brd-wrap .aslabel,
+    #brd-wrap .ct-legend cite,
+    #brd-wrap .ct-legend span,
+    #brd-wrap .ct-legend strong,
+    #brd-wrap .ct-legend,
+    #brd-wrap .info-list li span,
+    #brd-wrap .info-list li,
+    #brd-wrap .mf-set legend,
+    #brd-wrap .user-ident .username strong,
+    #brd-wrap input[id^="fld"],
+    #brd-wrap label,
+    #brd-wrap textarea,
+    #quicksearch:focus,
+    #brd-wrap #brd-crumbs-top .crumblast a,
+    #brd-wrap #brd-crumbs-top .crumblast a:hover,
+    ul li strong,
     .textblock {
         color: var(--text-color);
+    }
+
+    /* infoboxes */
+    #brd-wrap .main-content .info-box {
+        background: var(--theme-info-background);
+    }
+    #brd-wrap .main-content .warn-box {
+        background: var(--theme-warning-background);
+    }
+
+    /* custom color */
+    #brd-wrap .required label em,
+    #brd-wrap #req-msg em,
+    #brd-wrap .warn strong,
+    #brd-wrap .important strong {
+        color: hsl(359, 100%, 80%);
     }
     .mediawiki #bodyContent a.external,
     a,
@@ -232,11 +288,29 @@
         color: #50adff
     }
 
+    /* edge case override */
+    .mediawiki #bodyContent > table {
+        background-color: var(--bg-color-dropdown) !important;
+        border-color: var(--bg-color-light) !important;
+        color: var(--text-color);
+    }
+
+    /* misc */
+    #brd-wrap [id^="pun_bbcode_button_"],
+    .mediawiki input[type="submit"],
+    .mediawiki input.historysubmit,
+    .mediawiki textarea,
+    .mediawiki pre {
+        filter: invert(1);
+    }
     img[src^="/images/status/"] {
         mix-blend-mode: color;
     }
     .mediawiki #p-logo,
     #header {
         mix-blend-mode: multiply;
+    }
+    .hn {
+        background-color: inherit;
     }
 }

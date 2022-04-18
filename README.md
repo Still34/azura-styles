@@ -5,6 +5,14 @@
 
 ## Supported Websites
 
+### Redump (Dark)
+
+> Fixes the Redump atrocious light mode design.
+
+![Preview](resources/dark-redump.png)
+
+[Install](https://github.com/Still34/azura-styles/raw/master/styles/DarkRedump.user.css)
+
 ### Shopify (Dark)
 
 > Inverts the official color palette, making the dashboard a little more bearable.
