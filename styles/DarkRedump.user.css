@@ -7,7 +7,7 @@
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkRedump.user.css
-@version      1.2.2
+@version      1.2.3
 ==/UserStyle== */
 @-moz-document domain("redump.org") {
     :root {
@@ -84,6 +84,7 @@
     .menu {
         background: var(--bg-color-light);
     }
+    .form fieldset,
     .bca,
     .dvd,
     .extra,
@@ -121,7 +122,6 @@
     }
 
     /* #e5e5e5 */
-    #brd-wrap th,
     td.havemiss,
     th.havemiss {
         background-color: var(--bg-color-dark);
@@ -167,7 +167,6 @@
     /* #f1f1f1 */
     .mediawiki .catlinks,
     .main-subhead,
-    #brd-wrap td,
     .games tr:hover,
     .tracks th,
     .tracks tr:hover,
@@ -259,8 +258,8 @@
     #brd-wrap label,
     #brd-wrap textarea,
     #quicksearch:focus,
-    #brd-wrap #brd-crumbs-top .crumblast a,
-    #brd-wrap #brd-crumbs-top .crumblast a:hover,
+#brd-wrap #brd-crumbs-top .crumblast a,
+#brd-wrap #brd-crumbs-top .crumblast a:hover ,
     ul li strong,
     .textblock {
         color: var(--text-color);
