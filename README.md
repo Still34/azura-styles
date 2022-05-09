@@ -17,7 +17,7 @@
 
 > Furuke, but much less performance-intensive than Dark Reader.
 
-![Preview](resources/dark-Furuke.png)
+![Preview](resources/dark-furuke.png)
 
 [Install](https://github.com/Still34/azura-styles/raw/master/styles/DarkFuruke.user.css)
 
