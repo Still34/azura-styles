@@ -13,6 +13,14 @@
 
 [Install](https://github.com/Still34/azura-styles/raw/master/styles/DarkRedump.user.css)
 
+### Furuke (Dark)
+
+> Furuke, but much less performance-intensive than Dark Reader.
+
+![Preview](resources/dark-Furuke.png)
+
+[Install](https://github.com/Still34/azura-styles/raw/master/styles/DarkFuruke.user.css)
+
 ### Shopify (Dark)
 
 > Inverts the official color palette, making the dashboard a little more bearable.
