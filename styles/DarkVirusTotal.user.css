@@ -24,7 +24,7 @@
         --theme-warning-background: hsl(38, 66%, 25%);
         --theme-warning-background-glow-high-contrast: hsl(38, 66%, 25%);
         --neutral-grey: hsl(0, 0%, 50%);
-        --bg-color: hsl(240, 6%, 8%);
+        --bg-color: hsl(234, 10%, 13%);
         --bg-color-dark: hsl(240, 6%, 5%);
         --bg-color-light: hsl(212, 10%, 10%);
         --bg-color-light-alt: hsl(212, 10%, 13%);
@@ -50,35 +50,41 @@
         --vt-grey-500: hsl(240, 6%, 80%);
         --vt-grey-600: hsl(240, 6%, 90%);
         --vt-grey-700: hsl(240, 6%, 95%);
-        --vt-grey-800: #f9f9f9;
-        --vt-grey-900: #fdfdfd;
-        --vt-blue-900: #ecefff;
-        --vt-blue-800: #d6dcfe;
-        --vt-blue-700: #b0b8fe;
-        --vt-blue-600: #8895fe;
-        --vt-blue-500: #6071ff;
-        --vt-blue-400: #3a4eff;
-        --vt-blue-300: #2b3bbf;
-        --vt-blue-200: #1d2780;
-        --vt-blue-100: #17206a;
-        --vt-blue-50: #11174c;
+        --vt-grey-800: hsl(0, 0%, 98%);
+        --vt-grey-900: hsl(0, 0%, 99%);
+        --vt-blue-900: hsl(231, 75%, 96%);
+        --vt-blue-800: hsl(231, 75%, 92%);
+        --vt-blue-700: hsl(234, 78%, 84%);
+        --vt-blue-600: hsl(233, 78%, 76%);
+        --vt-blue-500: hsl(234, 70%, 69%);
+        --vt-blue-400: hsl(234, 75%, 61%);
+        --vt-blue-300: hsl(234, 60%, 46%);
+        --vt-blue-200: hsl(234, 60%, 31%);
+        --vt-blue-100: hsl(233, 60%, 25%);
+        --vt-blue-50: hsl(234, 60%, 18%);
         --vt-black-1: #eee;
         --vt-white: var(--bg-color);
         --bs-body-bg: var(--bg-color);
-        --bs-secondary-bg-rgb: var(--bg-color-light);
-        --bs-secondary-bg: var(--bg-color-light);
+        --bs-body-bg-rgb: 40, 40, 45;
+        --bs-secondary-bg: var(--vt-grey-200);
+        --bs-secondary-bg-rgb: 49, 50, 51;
+        --bs-tertiary-bg: var(--vt-grey-100);
+        --bs-tertiary-bg-rgb: 36, 38, 44;
+        --bs-tertiary-color-rgb: 50, 50, 35;
         --bs-form-control-bg: var(--theme-code-block);
         --vt-graph-list-zebra-striped-background: var(--bg-color-light-alt);
         --vt-modal-bg-color: var(--bg-color);
         --vt-ui-popover-content-background: var(--bg-color-light-alt);
         --vt-ui-popover-header-background: var(--bg-color-light);
         --vt-ui-expandable-border-color: var(--bg-color-light);
-        --bs-link-color: var(--vt-blue-400);
+        --bs-link-color: var(--vt-blue-600);
         --bs-body-color: var(--text-color);
         --vt-primary-text-color: var(--text-color-light);
         --vt-secondary-text-color: var(--text-color-light-alt);
         --vt-ui-button-color-text: var(--text-color);
         --bs-tertiary-color: var(--text-color);
+        --bs-border-color: var(--vt-grey-100);
+        --bs-input-border-color: var(--bs-border-color);
     }
 
     input,
@@ -290,7 +296,7 @@
 
     .hero-title,
     #checkboxLabel {
-        color: var(--vt-black-1);dolp
+        color: var(--vt-black-1);
     }
 
     #searchInput,
