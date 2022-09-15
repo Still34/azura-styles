@@ -7,7 +7,7 @@
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://userstyles.world/api/style/1094.user.css
-@version      1.1.5
+@version      1.2.0
 ==/UserStyle== */
 @-moz-document domain("virustotal.com") {
     :root {
@@ -24,10 +24,10 @@
         --theme-warning-background: hsl(38, 66%, 25%);
         --theme-warning-background-glow-high-contrast: hsl(38, 66%, 25%);
         --neutral-grey: hsl(0, 0%, 50%);
-        --bg-color: hsl(240, 6%, 10%);
+        --bg-color: hsl(240, 6%, 8%);
         --bg-color-dark: hsl(240, 6%, 5%);
-        --bg-color-light: hsl(212, 10%, 15%);
-        --bg-color-light-alt: hsl(212, 10%, 18%);
+        --bg-color-light: hsl(212, 10%, 10%);
+        --bg-color-light-alt: hsl(212, 10%, 13%);
         --bg-color-highlight: hsl(221, 30%, 25%);
         --bg-color-orange: hsl(36, 53%, 38%);
         --bg-color-blue-light: hsl(226, 46%, 50%);
@@ -37,7 +37,7 @@
         --bg-color-blue-dark: hsl(226, 64%, 15%);
         --bg-color-dropdown: var(--bg-color-light-alt);
         --link-color: hsl(0, 0, 0);
-        --text-color: hsl(200, 4%, 85%);
+        --text-color: hsl(200, 0%, 85%);
         --text-color-dark: hsl(200, 4%, 25%);
         --black: var(--bg-color);
         --white: var(--text-color);
@@ -65,12 +65,20 @@
         --vt-black-1: #eee;
         --vt-white: var(--bg-color);
         --bs-body-bg: var(--bg-color);
+        --bs-secondary-bg-rgb: var(--bg-color-light);
+        --bs-secondary-bg: var(--bg-color-light);
+        --bs-form-control-bg: var(--theme-code-block);
         --vt-graph-list-zebra-striped-background: var(--bg-color-light-alt);
-        --vt-modal-bg-color: var(--bg-color-light-alt);
+        --vt-modal-bg-color: var(--bg-color);
         --vt-ui-popover-content-background: var(--bg-color-light-alt);
         --vt-ui-popover-header-background: var(--bg-color-light);
-        --vt-ui-expandable-border-color: var(--bg-color-light); 
-        --bs-link-color: var(--bg-color-light);
+        --vt-ui-expandable-border-color: var(--bg-color-light);
+        --bs-link-color: var(--vt-blue-400);
+        --bs-body-color: var(--text-color);
+        --vt-primary-text-color: var(--text-color-light);
+        --vt-secondary-text-color: var(--text-color-light-alt);
+        --vt-ui-button-color-text: var(--text-color);
+        --bs-tertiary-color: var(--text-color);
     }
 
     input,
@@ -101,8 +109,8 @@
         border: 1px solid var(--theme-warning-background-glow-high-contrast);
     }
 
-    [slot="label-content"]>a,
-    .process>a,
+    [slot="label-content"] > a,
+    .process > a,
     .alert {
         color: var(--text-color);
     }
@@ -141,11 +149,6 @@
     }
 
 
-    .gsc-above-wrapper-area {
-        border-bottom: 1px solid var(--bg-color-light-alt);
-    }
-
-
     .gsc-control-cse,
     .gsc-webResult.gsc-result,
     .gsc-results .gsc-imageResult,
@@ -155,13 +158,19 @@
         border-color: var(--bg-color-light-alt);
     }
 
-    .tabs-chip,
+    [id*="chip"],
     .content-main > #settings,
     .article-body pre,
     .google-visualization-table-tr-odd,
     .matches-table > .matches-row:nth-child(2n) {
-        background: var(--bg-color-light);
+        background: var(--bg-color-light) !important;
         color: var(--text-color);
+    }
+
+    div.grey,
+    div.avatar-section,
+    div.entity-row.first div.column.column-title {
+        background: var(--vt-grey-100);
     }
 
     div.list-group-item {
@@ -198,8 +207,35 @@
         color: var(--text-color) !important;
     }
 
+    vt-ui-generic-card,
+    vt-ui-file-card,
+    #detections,
+    #detections .detection,
+    div.border-top,
+    .matches-table,
+    div.border,
+    .header,
+    div.entity-row,
+    vt-ui-search-bar,
+    div#omnibarWrapper,
+    vt-ui-omnibar,
+    vt-ui-sidebar,
+    div.grey,
     .row section {
-        border-color: var(--vt-grey-600);
+        border-color: var(--vt-grey-100) !important;
+    }
+
+
+
+    .badge.rounded-pill {
+        color: var(--text-color-dark) !important;
+    }
+
+    .badge,
+    .rounded-pill,
+    .tabs-chip {
+        background: var(--vt-grey-600) !important;
+        color: var(--text-color) !important;
     }
 
     .btn,
@@ -207,6 +243,7 @@
         color: var(--vt-grey-500) !important;
     }
 
+    #section-title,
     .row header .description {
         color: var(--text-color) !important;
     }
@@ -253,7 +290,13 @@
 
     .hero-title,
     #checkboxLabel {
-        color: var(--vt-black-1);
+        color: var(--vt-black-1);dolp
+    }
+
+    #searchInput,
+    .tabs-wrapper > .nav-tabs {
+        color: var(--bs-tertiary-color) !important;
+        background: var(--bg-color-light) !important;
     }
 
     vt-ui-dropdown,
