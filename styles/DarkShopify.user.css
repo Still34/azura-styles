@@ -7,7 +7,7 @@
 @namespace    github.com/openstyles/stylus
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkShopify.user.css
-@version      1.0.4
+@version      1.0.6
 ==/UserStyle== */
 @-moz-document regexp("https?://.*\\.myshopify.com/admin.*") {
     :root,
@@ -152,6 +152,7 @@
     .idc0_332 body {
         background-color: var(--theme-color) !important;
     }
+    [class*="Polaris-Card"] tr:nth-of-type(2n),
     ._3BbkR,
     ._3wT1P {
         background-color: var(--theme-color);
@@ -166,6 +167,7 @@
     [class*="Polaris-Card"] th,
     [class*="Polaris-Card"] tr,
     [class*="Polaris-Stack"] button,
+    .osewa,
     ._1IHAv,
     ._2G9Mb,
     ._3yZyD {
