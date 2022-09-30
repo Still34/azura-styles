@@ -21,6 +21,14 @@
 
 [Install](https://github.com/Still34/azura-styles/raw/master/styles/DarkFuruke.user.css)
 
+### Ruten / 露天 (Dark)
+
+> Makes Ruten a less painful experience during your sleepless nights.
+
+![Preview](resources/dark-ruten.png)
+
+[Install](https://github.com/Still34/azura-styles/raw/master/styles/DarkRuten.user.css)
+
 ### Shopify (Dark)
 
 > Inverts the official color palette, making the dashboard a little more bearable.
