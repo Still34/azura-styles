@@ -4,9 +4,10 @@
 @license      MIT
 @name         Dark Furuke
 @namespace    url(https?://www.furuke.com/*)
-@namespace    github.com/openstyles/stylus
+@namespace    github.com/Still34/azura-styles
 @homepageURL  https://github.com/Still34/azura-styles
-@version      1.0.0
+@updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkFuruke.user.css
+@version      1.0.1
 ==/UserStyle== */
 @-moz-document domain("www.furuke.com") {
     :root {

@@ -5,10 +5,10 @@
 @name         Dark Pixiv
 @namespace    domain("pixiv.net")
 @namespace    domain("fanbox.cc")
-@namespace    github.com/openstyles/stylus
+@namespace    github.com/Still34/azura-styles
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkPixiv.user.css
-@version      1.1.5
+@version      1.1.6
 ==/UserStyle== */
 @-moz-document domain("pixiv.net"),
 domain("fanbox.cc") {

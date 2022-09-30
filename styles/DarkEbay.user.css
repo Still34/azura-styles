@@ -6,10 +6,10 @@
 @namespace    domain("www.ebay.com")
 @namespace    domain("signin.ebay.com")
 @namespace    domain("faccountsettings.ebay.com")
-@namespace    github.com/openstyles/stylus
+@namespace    github.com/Still34/azura-styles
 @homepageURL  https://github.com/Still34/azura-styles
 @updateURL    https://github.com/Still34/azura-styles/raw/master/styles/DarkEbay.user.css
-@version      1.0.1
+@version      1.0.2
 ==/UserStyle== */
 @-moz-document domain("www.ebay.com"), domain("accountsettings.ebay.com"), domain("signin.ebay.com") {
     :root {
