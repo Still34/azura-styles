@@ -8,7 +8,7 @@
 @namespace      github.com/Still34/azura-styles
 @homepageURL    https://github.com/Still34/azura-styles
 @updateURL      https://github.com/Still34/azura-styles/raw/master/styles/DarkRuten.user.css
-@version        1.0.0
+@version        1.1.0
 @var            checkbox bDisableAds "Disable sponsored items in search results?" 1
 ==/UserStyle== */
 @-moz-document domain("ruten.com.tw") {
@@ -27,10 +27,16 @@
         --black-200: hsl(0, 0%, 20%);
         --black-100: hsl(0, 0%, 10%);
         --black-000: hsl(0, 0%, 0%);
+        --alert-danger: hsl(0, 50%, 16%);
+        --alert-title: hsl(120, 20%, 15%);
+        --ruten-theme-color: hsl(31, 94%, 30%);
+        --ruten-theme-color-alt: hsl(35, 50%, 20%);
     }
 
     if bDisableAds {
         .rt-ad,
+        .ruten-event-shortcut,
+        #ad-promote,
         #ad-slideshow,
         #ad-flash,
         #ad-special,
@@ -38,16 +44,64 @@
             display: none;
         }
     }
+    .item-holiday-action,
+    .item-purchase-action,
+    .item-shopping-cart-action,
+    .item-soldout-action,
+    .seller-board-title {
+        background-color: var(--ruten-theme-color);
+    }
+    .item-holiday-action:hover,
+    .item-purchase-action:hover,
+    .item-shopping-cart-action:hover,
+    .item-soldout-action:hover,
+    .seller-board-content {
+        background-color: var(--ruten-theme-color-alt);
+    }
+
+    .item-spec-name:hover,
+    .custom-store .item-spec-list .item-spec-list-item [type="checkbox"]:checked + label,
+    .item-spec-list .item-spec-list-item [type="checkbox"]:checked + label {
+        border-color: var(--ruten-theme-color);
+    }
+    .item-spec-name {
+        border-color: var(--ruten-theme-color-alt);
+    }
+
+    .rt-alert-security .alert-title {
+        background-color: var(--alert-title);
+    }
+
+    .rt-alert-danger {
+        background-color: var(--alert-danger);
+    }
     a:active,
     a:hover,
     a:link,
     a:visited {
         color: #40b1ff
     }
+    .rt-amount-control-action,
+    .shipping-discount-text,
+    .mybid-tab-buyer > a::after,
+    .mybid-tab-buyer > a {
+        color: white;
+        background: #263057;
+    }
+    .mybid-tab-seller > a::after,
+    .mybid-tab-seller > a {
+        color: white;
+        background: #572632;
+    }
     .theme-category25 .rt-subcategory-list {
         background-color: hsl(25, 20%, 10%);
         border-color: hsl(17, 95%, 20%);
     }
+    .item-purchase-form {
+        background-color: hsl(32, 100%, 10%);
+    }
+    .rt-amount-control-input,
+    .rt-store-search .rt-form-input,
     .rt-product-card {
         box-shadow: 0 1px 2px 0 var(--black-300), 0 0 2px 0 var(--black-300);
     }
@@ -92,7 +146,9 @@
     .rt-form-select,
     .search-bar-keyword-item.search-bar-keyword-selected,
     .search-bar-keyword-item:hover,
+    .item-gallery-main-image,
     .rt-chip:disabled,
+    .rt-alert-security,
     .rt-chip:disabled:active,
     .rt-chip:disabled:hover {
         border-color: var(--black-300);
@@ -217,6 +273,7 @@
     .rt-chip {
         background-color: var(--black-100);
     }
+    .shipping-discount-section,
     .filter-category-item:hover,
     .rt-button-default.rt-button-disabled,
     .rt-button-default:disabled,
@@ -259,8 +316,8 @@
     .rt-form-input:disabled,
     .rt-form-input,
     .rt-form-select,
-
     .rt-form-select:disabled,
+    .qna-admin .rt-button-mini,
     input[type=checkbox]:disabled + .rt-form-label:before,
     input[type=radio]:disabled + .rt-form-label:before,
     .rt-button-default:disabled,
@@ -274,6 +331,7 @@
     .index-sidebar {
         background: linear-gradient(to bottom, hsl(36, 20%, 20%) 0, hsl(36, 20%, 20%) 80px, var(--theme-color) 80px, var(--theme-color) 100%);
     }
+    .board-main,
     .layout > header > .rt-header,
     .filter-section-title,
     .index-nav .index-nav-all-categories-nav,
@@ -284,14 +342,15 @@
     .rt-footer-download .download-app {
         filter: brightness(50%);
     }
-    .index-all-category-level-two-wrap .index-all-category-level-two-title,
-    .index-all-category-store-title,
-    .index-popular-category-level-two .index-popular-category-level-two-title,
-    .index-popular-category-level-two .index-popular-category-level-two-title:hover,
-    .index-sidebar-banner-title,
-    .rt-page div[class*="-icon-wrap"],
-    span[class*="-nav-icon"] {
+    .rt-amount-control-action:hover {
         filter: invert(1);
+    }
+    .shipping-discount-example {
+        filter: hue-rotate(294deg) brightness(60%) contrast(100%);
+    }
+    .rt-page span[class$="-icon"],
+    .rt-page div[class$="-icon"] {
+        filter: sepia(99%) saturate(0%) hue-rotate(294deg) brightness(60%) contrast(0%);
     }
     .rt-footer-nav-item a,
     .rt-footer-nav-name,
@@ -302,7 +361,6 @@
     .legacy-browser-warning .rt-lightbox-content {
         color: var(--link-color-active);
     }
-
     .index-theme-tab .rt-tab-item-link,
     .index-theme-tab a.rt-tab-item-link,
     .rt-button,
@@ -337,6 +395,13 @@
     .rt-text-gray-darker,
     .rt-text-gray-darker,
     .rt-text-subcontent,
+    .seller-disc,
+    .rt-header-topnav-link,
+    a.rt-header-topnav-link,
+    a.rt-header-topnav-link:active,
+    a.rt-header-topnav-link:hover,
+    a.rt-header-topnav-link:link,
+    a.rt-header-topnav-link:visited,
     .index-event-article-content {
         color: var(--text-color-deemphasis);
     }
@@ -365,6 +430,7 @@
     .special-item .special-item-heading,
     .index-sidebar-shortcut-item,
     .index-sidebar-nav-title,
+    .goods-page-section .rt-heading,
     .everyone-is-looking-for-item-text,
     .legacy-browser-warning .rt-lightbox-title,
     .legacy-browser-warning .warning-upgrade-emphasis,
@@ -409,8 +475,12 @@
     .rt-header-search,
     .rt-header-search-input,
     .rt-header-search-select,
+    .rt-text-label,
     .search-bar-keyword-item .search-bar-keyword-match-word,
     .rt-nav-link,
+    .seller-board-text,
+    .item-detail-table,
+    .item-spec-name,
     a.rt-nav-link,
     a.rt-nav-link:active,
     a.rt-nav-link:link,
@@ -650,10 +720,24 @@
     .rtchat-modal .rtchat-button.rtchat-button-secondary:hover,
     .brand-title,
     .rt-toast-heading,
+    .coupon-name,
+    .qna-record .rt-article,
     .rt-toast-message,
+    .item-spec-name:hover,
+    [class*="-title"],
+    .rt-store-intro,
+    .seller-board-title,
+    .rt-tab .rt-tab-item-current .rt-tab-item-link,
     .rt-chat-container .message-sent a {
         color: var(--text-color-emphasis);
     }
+    .rt-text-subcontent {
+        color: inherit !important;
+    }
+    .coupon {
+        background: linear-gradient(var(--theme-color-alt), var(--theme-color-alt));
+    }
+    .shipping-discount-coupon-info,
     body,
     .rt-modal,
     .rt-button-default.rt-button-outline,
@@ -857,11 +941,27 @@
     .rt-chip:disabled,
     .rt-chip:disabled:active,
     .rt-chip:disabled:hover,
+    .item-detail-table,
     .hot-sale-item,
     .rt-amount-control,
+    .shipping-discount-event-item,
     .sidebar-ad-section-body {
         background-color: var(--theme-color);
     }
+    .item-owner-title,
+    .rt-jqmodal-panel,
+    .rt-amount-control-action:disabled,
+    .rt-amount-control-action:disabled:active,
+    .rt-amount-control-action:disabled:hover,
+    .rt-amount-control-input,
+    .item-spec-name,
+    .qna-reply-list,
+    .rt-alert-security .sidebar,
+    .rt-store-content,
+    .rt-store-sidebar,
+    .goods-page-section .rt-tab-item,
+    .goods-page-section .rt-tab,
+    .shipping-discount-event-text,
     .index-banner-bottom > a:empty,
     .index-banner-top > a:empty,
     .index-item-empty-mixin,
