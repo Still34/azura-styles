@@ -8,7 +8,7 @@
 @namespace      github.com/Still34/azura-styles
 @homepageURL    https://github.com/Still34/azura-styles
 @updateURL      https://github.com/Still34/azura-styles/raw/master/styles/DarkRuten.user.css
-@version        1.2.0
+@version        1.3.0
 @var            checkbox bDisableAds "Disable sponsored items in search results?" 1
 ==/UserStyle== */
 @-moz-document domain("ruten.com.tw") {
@@ -30,12 +30,12 @@
         --black-000: hsl(0, 0%, 0%);
         --alert-danger: hsl(0, 50%, 16%);
         --alert-title: hsl(120, 20%, 15%);
-        --ruten-theme-color: hsl(31, 94%, 40%);
-        --ruten-theme-color-alt: hsl(35, 50%, 20%);
-
-        /* 品牌旗艦 */
+        --ruten-theme-color: hsl(31, 90%, 35%);
+        --ruten-theme-color-alt: hsl(35, 90%, 37%) // 品牌旗艦 
         --top-tier-store-main-bg: hsl(38, 100%, 7%);
-        --top-tier-store-head-bg: hsl(38, 100%, 15%);
+        --top-tier-store-head-bg: hsl(38, 100%, 15%); // 我的拍賣 sidebars
+        --mybid-link-block: hsl(32, 60%, 10%);
+        --mybid-link-block-header: hsl(32, 60%, 20%);
 
         /* /credit/point -> body[bgcolor="#FFFFFF"] > .rt-page table[bgcolor="f6f6f6"] */
     }
@@ -43,6 +43,9 @@
         .rt-ad,
         .ruten-event-shortcut,
         .spotlight-section,
+        .pp-bank-event-wrap,
+        a[href*="ad_redir"],
+        [class*="promo"],
         #ad-promote,
         #ad-slideshow,
         #ad-flash,
@@ -52,10 +55,36 @@
         }
     }
     body,
+    .credit-tab *,
+    p[class*="tidied-"],
+    .rt-form-input,
+    .rt-form-select,
+    .rt-form-textarea,
+    .goods-page-section,
+    .mybid-form-input,
+    .mybid-form-select,
+    .mybid-form-textarea,
+    .mybid-sub-tab-area,
+    .mybid-tab-area,
+    .rt-upload-easy .rt-form-input,
+    .rt-upload-easy .rt-form-select,
+    .rt-upload-easy .rt-form-textarea,
+    .goods-class-picker,
+    .oldrt-form-input,
+    .oldrt-form-select,
+    .oldrt-form-textarea,
     body[bgcolor="#FFFFFF"] > .rt-page td {
         font-family: "Noto Sans TC", "PingFang TC", "Hiragino Sans CNS",
         "Microsoft JhengHei", "BlinkMacSystemFont", "Helvetica Neue", "Roboto",
         PMingLiU, sans-serif;
+    }
+    .mybid-link-block {
+        background-color: var(--mybid-link-block);
+    }
+    .mybid-link-block h4 {
+        background: var(--mybid-link-block-header);
+        color: var(--text-color-emphasis);
+        border: var(--mybid-link-block);
     }
     .more-ebay-items,
     body[bgcolor="#FFFFFF"] > .rt-page *[bgcolor*="eeeeee"],
@@ -70,6 +99,7 @@
         display: none;
     }
 
+    .link-mybid,
     .rt-store-best-goods-main {
         background-color: var(--top-tier-store-main-bg);
     }
@@ -79,7 +109,7 @@
     .category-item {
         flex: 0 0 calc(25% - 32px);
     }
-
+    .main-area .column-seller h3,
     .theme-category1 .rt-site-search,
     .theme-category1 .rt-subcategory-list,
     .theme-category2 .rt-site-search,
@@ -91,13 +121,17 @@
     .theme-category12 .rt-site-search,
     .theme-category12 .rt-subcategory-list {
         background-color: hsl(327, 100%, 5%);
+        color: var(--text-color-emphasis);
     }
+    .rt-bd .section-content,
+    .main-area .column-buyer h3,
     .theme-category5 .rt-site-search,
     .theme-category5 .rt-subcategory-list,
     .theme-category8 .rt-site-search,
     .theme-category8 .rt-subcategory-list,
     .theme-category11 .rt-site-search {
         background-color: hsl(199, 100%, 5%);
+        color: var(--text-color-emphasis);
     }
     .theme-category11 .rt-subcategory-list,
     .theme-category19 .rt-site-search,
@@ -109,7 +143,10 @@
     .theme-category23 .rt-site-search,
     .theme-category23 .rt-subcategory-list {
         background-color: hsl(199, 100%, 5%);
+        color: var(--text-color-emphasis);
     }
+    .coin-event, .promotion-event,
+    .main-area .column-both h3,
     .theme-category3 .rt-site-search,
     .theme-category3 .rt-subcategory-list,
     .theme-category9 .rt-site-search,
@@ -121,6 +158,7 @@
     .theme-category24 .rt-site-search,
     .theme-category24 .rt-subcategory-list {
         background-color: hsl(80, 100%, 9%);
+        color: var(--text-color-emphasis);
     }
     .theme-category4 .rt-site-search,
     .theme-category4 .rt-subcategory-list,
@@ -137,8 +175,14 @@
     .theme-category25 .rt-site-search,
     .theme-category25 .rt-subcategory-list {
         background-color: hsl(25, 100%, 6%);
+        color: var(--text-color-emphasis);
     }
-
+    .rt-page .rt-chat-message-header,
+    .rt-button-primary,
+    .rt-hd .active,
+    .ta-hd-theme,
+    .nav li:hover,
+    .rt-hd-theme,
     .filter-section-title,
     .goods-seller-coupon .slideshow-control-next,
     .goods-seller-coupon .slideshow-control-prev,
@@ -152,6 +196,7 @@
     .spotlight-section-title {
         background: var(--ruten-theme-color) !important;
     }
+    .rt-button-primary:hover,
     .index-button:hover,
     .item-holiday-action:hover,
     .item-shopping-cart-action:hover,
@@ -162,6 +207,8 @@
     body[bgcolor="#FFFFFF"] > .rt-page *[bgcolor*="FFF0E2"] {
         background: var(--ruten-theme-color-alt) !important;
     }
+    .nav li:hover,
+    .rt-button-primary,
     .custom-store .item-spec-list .item-spec-list-item [type="checkbox"]:checked + label,
     .daily-mission-section,
     .filter-section-title,
@@ -172,16 +219,22 @@
     .spotlight-section-body {
         border-color: var(--ruten-theme-color);
     }
+    .rt-button-primary:hover,
     .item-spec-name {
         border-color: var(--ruten-theme-color-alt);
     }
     .rt-alert-security .alert-title {
         background-color: var(--alert-title) !important;
     }
+    .rt-panel-highlight,
+    .rt-alert-announce,
+    .rt-upload-easy .rt-alert-danger,
+    .login-error-wrap,
     .item-purchase-action:hover,
     .store-type2 .customizable-medium,
     .store-type2 .customizable-light,
     .rt-alert-danger {
+        color: #fff2f2;
         background-color: var(--alert-danger) !important;
     }
     a:active,
@@ -190,6 +243,10 @@
     a:visited {
         color: #40b1ff;
     }
+    .rt-common-base .rt-button-default:hover,
+    .rt-nav-pills-link:hover,
+    .ta-tab .ta-tab-item .rt-nav-pills-link:hover,
+    .mybid-sub-tab-area.selected-buyer,
     .ebay-result-container,
     .message-flyout .message-sent .message-bubble.rtchat-message-bubble,
     .rt-amount-control-action,
@@ -199,6 +256,8 @@
         color: white;
         background: #263057;
     }
+    .mybid-sub-tab-area.selected-seller,
+    .main-area .tip-block,
     .message-flyout .message-received .message-bubble,
     .mybid-tab-seller > a::after,
     .mybid-tab-seller > a {
@@ -208,13 +267,28 @@
     .item-purchase-form {
         background-color: hsl(32, 100%, 10%);
     }
-
+    .rt-form-input,
+    .rt-form-textarea,
+    .mybid-form-input,
+    .mybid-form-select,
+    .mybid-form-textarea,
+    .rt-footer,
+    .oldrt-form-input,
+    .rt-upload-easy .rt-form-input,
+    .rt-upload-easy .rt-form-textarea,
+    .oldrt-form-textarea,
+    input[type="tel"].rt-form-input,
     .best-goods-listing .best-goods-col .best-goods-container,
     .rt-amount-control-input,
     .rt-store-search .rt-form-input,
     .rt-product-card {
         box-shadow: 0 1px 2px 0 var(--black-300), 0 0 2px 0 var(--black-300);
-    }
+    } // neutral border
+        .setting-container-full-page .setting-block,
+    .rt-bd .dialog ul,
+    .rt-account-detail,
+    .mybid-table td,
+    .mybid-table th,
     .category-all-body,
     .category-section,
     .contact-item-container,
@@ -254,13 +328,37 @@
     .sidebar-ad-section-body,
     .sidebar-ad-section-border,
     .sidebar-ad-section-title,
+    .rt-footer,
     .spotlight-area,
+    .mybid-tab-area,
+    .main-area .tip-block,
+    .message-flyout .message-received .message-bubble,
+    .mybid-tab-seller > a::after,
+    .mybid-tab-seller > a,
+    .main-area .column-buyer,
+    .main-area .column-seller,
+    .main-area .column-both,
     .v3-product-card .rt-chip-disabled,
     .v3-product-card .rt-chip-disabled:active,
     .v3-product-card .rt-chip-disabled:hover,
     .v3-product-card .rt-chip:disabled,
     .v3-product-card .rt-chip:disabled:active,
+    .rt-upload .item-form .rt-panel-default > .rt-panel-inner,
+    .rt-checkbox .rt-checkbox-checkmark:after,
     .v3-product-card .rt-chip:disabled:hover,
+    .goods-class-picker .class-path .class-item,
+    .no-touch.goods-class-picker .class-path .class-item:hover .node-item + .node-item,
+    .grey-block-wrap,
+
+    .mybid-form-input,
+    .mybid-form-select,
+    .mybid-form-textarea,
+    ,
+    .mybid-upload-step2 .image-upload-wrap,
+    .rt-upload-easy .rt-form-input,
+    .rt-upload-easy .rt-form-select,
+    .rt-upload-easy .rt-form-textarea,
+    #totpApp *,
     hr {
         border-color: var(--black-300);
     }
@@ -297,7 +395,6 @@
     .product-card-modal .rt-button-submit.rt-button-outline[type="button"]:disabled,
     .product-card-modal .rt-button-submit.rt-button-outline[type="reset"]:disabled,
     .product-card-modal .rt-button-submit.rt-button-outline[type="submit"]:disabled,
-    .rt-background-gray-lighter,
     .rt-background-gray-lighter,
     .rt-button-default.rt-button-outline:disabled,
     .rt-button-default.rt-button-outline:disabled,
@@ -435,6 +532,8 @@
     .rt-table > tfoot > tr > td,
     .rt-table > thead > tr > td,
     .shipping-discount-section,
+    .mybid-table thead tr,
+    .mybid-table thead td,
     .v3-product-card .rt-form-input:disabled,
     .v3-product-card .rt-form-select:disabled,
     .v3-product-card .rt-form-textarea:disabled,
@@ -445,6 +544,7 @@
     input[type="radio"]:disabled + .rt-form-label:before {
         background-color: var(--black-200);
     }
+    .rt-bd .dialog,
     #SortContainer,
     #ad-flash,
     .index-sidebar {
@@ -455,25 +555,36 @@
         var(--theme-color) 100%);
     }
     .board-main,
+    .nav li,
     .index-all-category-level-one-wrap .index-nav-block.hover-nav,
     .index-nav .index-nav-all-categories-nav,
     .guess-you-like-hook-inner-B {
         background: var(--primary-nav-color-inactive);
         border-color: var(--primary-nav-color-inactive);
+        color: var(--text-color);
     }
 
     .layout > header > .rt-header {
         background: hsl(35, 100%, 30%);
     }
+    textarea[disabled],
+    .disabled,
+    .nothing,
+    .rt-common-base .rt-button-disabled,
     .item-spec-list .item-spec-list-item [type="checkbox"]:disabled + label,
     .rt-footer-download .download-app {
         filter: brightness(50%);
     }
+    .credit-tab *,
     img[src*="/credit_photo/head.jpg"],
+    .rt-header-download-qcord,
     .item-qty-button,
     .index-sidebar-nav-icon,
     .rt-amount-control-action:hover {
         filter: invert(1) !important;
+    }
+    .credit-tab *{
+        background-blend-mode: overlay;
     }
     .shipping-discount-example {
         filter: hue-rotate(294deg) brightness(60%) contrast(100%);
@@ -536,11 +647,26 @@
     a.rt-header-topnav-link:link,
     a.rt-header-topnav-link:visited,
     a.rt-tab-item-link,
+    .rt-common-base .bd,
+    .rt-upload-easy .rt-form-input,
+    .rt-upload-easy .rt-form-select,
+    .rt-upload-easy .rt-form-textarea,
+    .rt-subtitle,
+    .rt-account-overview,
+    .item-spec-info,
+    .cart-store-delivery-detail,
+    .rt-panel,
     body[bgcolor="#FFFFFF"] > .rt-page .bk13,
     body[bgcolor="#FFFFFF"] > .rt-page *[bgcolor*="DBDBDB"],
     body[bgcolor="#FFFFFF"] > .rt-page td[bgcolor="#F3F3F3"] span {
         color: var(--text-color-deemphasis) !important;
     }
+    .transaction-order-info .order-info-item-content,
+    .rt-page .rt-chat-inbox,.transaction-section-main-item-content,
+    .fee-list-item-expand .fee-list-item-content, .transaction-fee-list-item .fee-list-item-content,
+    .mybid-form-input,
+    .mybid-form-select,
+    .mybid-form-textarea,
     .index-product-card-wrap .rt-chip,
     .product-card-modal .rt-modal-content,
     .rt-chat-inbox .rt-chat-inbox-contact,
@@ -561,6 +687,9 @@
     .rt-table > tfoot > tr > th,
     .rt-table > thead > tr > td,
     .rt-table > thead > tr > th,
+    .oldrt-form-input,
+    .oldrt-form-select,
+    .oldrt-form-textarea,
     .rt-text-content,
     .rt-text-gray-darkest,
     .rt-text-gray-darkest,
@@ -630,6 +759,10 @@
     a.rt-nav-link:link,
     a.rt-nav-link:visited,
     body,
+    .mybid-table,
+    .message-content-block .message-card-text,
+    #head_pagination .page-info .page-info-total::before,
+    #head_pagination .page-info .page-info-total::after,
     body[bgcolor="#FFFFFF"] > .rt-page .text_SplitPage_4,
     body[bgcolor="#FFFFFF"] > .rt-page > .rt-wrap > table[width="100%"] font {
         color: var(--text-color);
@@ -718,8 +851,6 @@
     .rt-button-default a,
     .rt-button-default,
     .rt-button-default:disabled,
-    .rt-button-default:hover a,
-    .rt-button-default:hover,
     .rt-button-default.rt-button-disabled,
     .rt-button-default.rt-button-outline,
     .rt-button-default.rt-button-outline:hover,
@@ -882,24 +1013,49 @@
     .v3-product-card .rt-chip-selected:active,
     .v3-product-card .rt-chip-selected:hover,
     .v3-product-card .rt-tooltip-content,
-    [class*="-title"],
+    .rt-page [class*="-title"],
+    .rt-button:active,
+    .rt-button:hover,
+    .rt-button:link,
+    .rt-button:visited,
+    .rt-common-base .rt-button-default,
+    .rt-hd .active,
+    .notice .notice-wrap a,
+    .nav li span,
+    .mybid-table thead td,
+    .store-name,
+    .rt-panel-default > .rt-panel-text,
+    .ta-tab .ta-tab-item.current,
+    .ta-tab .ta-tab-item.current span,
+    .ta-tab .ta-tab-item.current .ta-tab-item-content,
+    .rt-form-control,
+    .rt-user-account,
+    .contact-item-boardname,
+    .setting-container-full-page .setting-block-header,
+    .index-header-hot-search-item a:hover,
+    .index-header-hot-search-item:hover,
+    .transaction-section-header-content,.information-message-goods-name,
     body[bgcolor="#FFFFFF"] > .rt-page .bk16,
     body[bgcolor="#FFFFFF"] > .rt-page .bk16b {
-        color: var(--text-color-emphasis);
+        color: var(--text-color-emphasis) !important;
     }
 
     body[bgcolor="#FFFFFF"] > .rt-page a {
         color: var(--link-color);
     }
+
+    .item-sell .rt-button-default,
     .credit-tab .bk16b,
     .credit-tab,
     .rt-page,
     .rt-text-subcontent {
         color: inherit !important;
     }
+    .rt-upload-tool-item,
     .coupon {
-        background: linear-gradient(var(--theme-color-alt), var(--theme-color-alt));
+        background: linear-gradient(var(--theme-color), var(--theme-color));
     }
+    .rt-nav-pills-item,
     .anti-bilk,
     .auto-complete-container,
     .auto-complete-row,
@@ -954,7 +1110,6 @@
     .index-theme-card-section,
     .index-theme-card,
     .information-wrapper,
-    .item-detail-table,
     .legacy-browser-warning .warning-upgrade-skip-button,
     .main-banner-wrap,
     .message-bubble-no-padding,
@@ -1065,6 +1220,7 @@
     .rt-tab-item-current:hover,
     .rt-tab-item,
     .rt-tab,
+    .ta-tab .ta-tab-item,
     .rt-wrap > .category-icon-list-wrap,
     .rtchat-modal .rtchat-button.rtchat-button-secondary,
     .rtchat-modal-close-button,
@@ -1103,15 +1259,101 @@
     .v3-product-card input[type="radio"]:checked:disabled + .rt-form-label:before,
     .vue-affix.affix-top,
     .vue-affix.affix,
+
     body,
+    .my-rpoint-list-disabled .my-rpoint-list-item,
+    .login-card,
+    .validation-success,
+    .rt-panel,
+    .grey-block-wrap,
+    .mybid-upload-step2 .image-upload-wrap,
+    .mybid-upload-step2 .image-upload-notice,
+    .grey-block-wrap,
+    .mybid-upload-step2 .image-upload-wrap,
+    .mybid-upload-step2 .image-upload-notice,
+    .goods-class-picker .class-path .class-item,
+    .goods-class-picker .class-path .node-item + .node-item,
+    .goods-class-recent .class-item,
+    .RT_FILE_UPLOADER .gallery .dialog,
+    .oldrt-form-input,
+    .oldrt-form-select,
+    .oldrt-form-textarea,
+    .rt-alert-danger,
+    .rt-alert-warning,
+    .hightlight-on-edit-mode .is-on-edit-mode,
+    .data-form-table tr,
+    .data-form-table.item-form .first-column,
+    .data-form-table.shipping-form .first-column,
+    .area-pdway .section-note .title,
+    .panel-pp-crd-instl-desp .btn-close,
+    .panel-pp-crd-instl-desp .cp-panel-seller-bg,
+    .ad-demo-block .ad-demo-content,
+    .rt-upload .item-form .rt-table > tbody > tr > td,
+    .rt-upload .item-form .rt-table > tfoot > tr > td,
+    .rt-upload .item-form .rt-table > thead > tr > td,
+    .rt-upload .item-form .rt-table > tbody > tr.rt-tr-checked > td,
+    .rt-upload .item-form .rt-table > tfoot > tr.rt-tr-checked > td,
+    .rt-upload .item-form .rt-table > thead > tr.rt-tr-checked > td,
+    .rt-bd .notice-container:nth-child(2n+1) .notice-title,
+    .oldrt-form-input,
+    .oldrt-form-select,
+    .oldrt-form-textarea,
+    .rt-alert-danger,
+    .rt-alert-warning,
+    .hightlight-on-edit-mode .is-on-edit-mode,
+    .data-form-table tr,
+    .data-form-table.item-form .first-column,
+    .data-form-table.shipping-form .first-column,
+    .area-pdway .section-note .title,
+    .panel-pp-crd-instl-desp .btn-close,
+    .panel-pp-crd-instl-desp .cp-panel-seller-bg,
+    .ad-demo-block .ad-demo-content,
+    .combo-with-tr td,
+    .combo-with-tr th,
+    .cancel-trade-lightbox-button,
+    .cancel-trade-lightbox-button-open:hover,
+    .ad-priority-table .ad-priority-inner .ad-priority-opacity,
+    .ad-priority-table .ad-priority-inner:hover .ad-priority-opacity,
+    .ad-priority-opacity-novice,
+    :hover .ad-priority-opacity-novice,
+    .rt-common-base .rt-button-default,
+    .item-sell .rt-button-default,
+    .rtb-activity-item,
+    .default-setting,
+    .rt-upload-easy .rt-notice,
+    .ta-account-info-wrap .ta-account-info-section,
+    .rt-upload-easy .rt-form-input,
+    .rt-upload-easy .rt-form-select,
+    .rt-upload-easy .rt-form-textarea,
+    .rt-account-info-block,
+    .shopping-cart-page.rt-page,
+    .rt-bd .title-section li:nth-child(2n+1),
+    .rt-form-input,
+    .rt-form-textarea,
+    .item-owner-title,
+    .rt-panel-header.rt-panel-title,
+    .rt-panel-header > .rt-panel-title,
+    .rt-page .search-panel-input::placeholder,
+    .setting-container-wrapper .setting-block-footer,
     input[type="checkbox"] + .rt-form-label:before,
+    .mybid-table tbody tr,
+    .setting-container-full-page .setting-block,
+    .transaction-section-header,
     input[type="checkbox"]:checked:disabled + .rt-form-label:before,
     input[type="radio"] + .rt-form-label:before,
     input[type="radio"]:checked:disabled + .rt-form-label:before {
         background-color: var(--theme-color);
     }
-    .goods-page-section .rt-tab-item,
-    .goods-page-section .rt-tab,
+    .card,
+    .notice .notice-wrap,
+    .rt-account-info-block-content,
+    .rt-table-hover > tbody > tr:hover > td,
+    .rt-table-hover > tfoot > tr:hover > td,
+    .rt-table-hover > thead > tr:hover > td,
+    .login-middle-line::after,
+    .login-middle-line::before,
+    .rt-page .rt-tab-item,
+    .rt-page .rt-tab,
     .goods-seller-coupon,
     .index-all-category-level-two-wrap,
     .index-all-category-panel,
@@ -1122,12 +1364,14 @@
     .index-event-article,
     .index-item-empty-mixin,
     .index-nav .index-nav-categories:empty,
+    .rt-panel-default > .rt-panel-inner,
+    .rt-button-default,
     .index-popular-category-panel,
     .index-sidebar-banner-item-img-wrap:empty,
     .index-sidebar-banner-item.index-sidebar-banner-item-empty,
     .index-theme-card-list-bottom .index-theme-card,
     .index-theme-content-aside,
-    .item-owner-title,
+    .message-content-block .message-bubble-no-padding,
     .item-spec-name,
     .main-banner-wrap:empty,
     .message-content-container,
@@ -1137,23 +1381,47 @@
     .rt-amount-control-action:disabled,
     .rt-amount-control-action:disabled:active,
     .rt-amount-control-action:disabled:hover,
+    .mybid-form-input,
+    .mybid-form-select,
+    .mybid-form-textarea,
     .rt-amount-control-input,
     .rt-chat-inbox .rt-chat-inbox-contact:hover,
     .rt-chat-inbox .rt-chat-inbox-title,
     .rt-jqmodal-panel,
     .rt-store-content,
+    .rt-page,
+    .rt-bd .dialog ul,
     .rt-store-sidebar,
+    .totp-box-body,
+    .premium-pway,
+    .mybid-table tbody tr.row-even,
     .rt-table > tbody > tr > th,
     .rt-table > tfoot > tr > th,
     .rt-table > thead > tr > th,
     .shipping-discount-event-text,
+    .contact-item-container:hover,
+    .rt-page .rt-tab-item-active,
     .sidebar-ad-section-border,
+    .router-link-exact-active,
+    .setting-container-full-page,
+    .rt-table-hover > tbody:hover td[rowspan],
+    .rt-page .sort-panel,
+    .rt-chat-main-page .blank-container,
     .visited-button {
         background-color: var(--theme-color-alt);
     }
+    .item-detail-table,
     p[class*="tidied-"],
     .store-type2 .customizable-medium.rt-tab {
         background-color: inherit !important;
         color: inherit;
+    }
+    .rt-button-default:hover a,
+    .rt-button-default:hover,
+    .item-sell .rt-button-default:hover,
+    .mybid-sub-tab-area .selected-sub-tab {
+        background-color: inherit;
+        color: inherit;
+        filter: contrast(150%);
     }
 }
