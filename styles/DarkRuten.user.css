@@ -8,7 +8,8 @@
 @namespace      github.com/Still34/azura-styles
 @homepageURL    https://github.com/Still34/azura-styles
 @updateURL      https://github.com/Still34/azura-styles/raw/master/styles/DarkRuten.user.css
-@version        1.3.0
+@version        1.5.0
+@var            checkbox bEnableWideScreenPatch "Enable wide-screen support?" 0
 @var            checkbox bDisableAds "Disable sponsored items in search results?" 1
 ==/UserStyle== */
 @-moz-document domain("ruten.com.tw") {
@@ -28,7 +29,11 @@
         --black-200: hsl(0, 0%, 20%);
         --black-100: hsl(0, 0%, 10%);
         --black-000: hsl(0, 0%, 0%);
-        --alert-danger: hsl(0, 50%, 16%);
+        --alert-danger: hsl(0, 40%, 16%);
+        --alert-info: hsl(223, 40%, 15%);
+        --alert-info-text: hsl(223, 40%, 75%);
+        --alert-success: hsl(110, 40%, 15%);
+        --alert-success-text: hsl(110, 40%, 75%);
         --alert-title: hsl(120, 20%, 15%);
         --ruten-theme-color: hsl(31, 90%, 35%);
         --ruten-theme-color-alt: hsl(35, 90%, 37%) // 品牌旗艦 
@@ -45,7 +50,6 @@
         .spotlight-section,
         .pp-bank-event-wrap,
         a[href*="ad_redir"],
-        [class*="promo"],
         #ad-promote,
         #ad-slideshow,
         #ad-flash,
@@ -54,9 +58,95 @@
             display: none;
         }
     }
+    if bEnableWideScreenPatch {
+        div.w-1037,
+        aside.w-200,
+        .ad.adHome > div,
+        .rt-store-content,
+        .daily-mission-section,
+        .rt-store-goods-listing,
+        .guest-like-section,
+        .buyer-event-section,
+        .best-goods-listing .best-goods-col,
+        .rt-cmbox-product-list .rt-cmbox-list-container {
+            width: unset;
+            max-width: unset;
+        }
+        .index-nav {
+            max-width: 50vw;
+        }
+        .guess-you-like-hook,
+        .back-to-top-wrap {
+            width: 25vw;
+        }
+        .shipping-discount-banner {
+            height: unset;
+        }
+        
+        .rt-store-product-list-main .rt-product-card,
+        .index-product-card-wrap .rt-product-card,
+        .guest-like-section .goods-wrap .rt-product-card,
+        .rt-page .rt-header .rt-product-card{
+            width: 200px;
+            margin: 16px;
+        }
+        section.adHome,
+        .shipping-discount-banner,
+        .shipping-discount-content,
+        .layout .container,
+        .breadcrumb,
+        .index-main-wrap,
+        .rt-wrap {
+            min-width: 75vw;
+            max-width: 90vw;
+        }
+        .best-goods-listing .best-goods-col {
+            max-width: 50%;
+            min-width: 50%;
+        }
+        .ad.adHome > div {
+            min-width: 5%;
+            max-width: 15%
+        }
+        aside.w-200 {
+            flex: 1;
+        }
+        div.w-1037 {
+            margin-left: 1vw;
+            flex: 9;
+        }
+        .search-result-wrapper,
+        .index-main-content {
+            flex: inherit;
+            width: unset;
+        }
+        .shipping-discount-banner img {
+            position: inherit;
+        }
+        .loading-overlay{
+            width: 100%;
+        }
+
+        section.adHome,
+        .best-goods-listing {
+            display: flex;
+            flex-flow: wrap;
+        }
+        .index-product-card-wrap .rt-product-card,
+        .index-product-card-wrap .rt-product-card + .rt-product-card,
+        .guest-like-section .goods-wrap .rt-product-card + .rt-product-card,
+        .rt-page .rt-header .rt-product-card,
+        .index-product-card-wrap .rt-product-card:nth-of-type(6n+1){
+            margin-left: unset;
+            margin-top: unset;
+        }
+    }
     body,
     .credit-tab *,
     p[class*="tidied-"],
+    .rt-common-base .rt-form-input,
+    .rt-common-base .rt-form-select,
+    .rt-common-base .rt-form-textarea,
     .rt-form-input,
     .rt-form-select,
     .rt-form-textarea,
@@ -86,23 +176,18 @@
         color: var(--text-color-emphasis);
         border: var(--mybid-link-block);
     }
-    .more-ebay-items,
-    body[bgcolor="#FFFFFF"] > .rt-page *[bgcolor*="eeeeee"],
-    body[bgcolor="#FFFFFF"] > .rt-page *[bgcolor*="f6f6f6"] {
-        background-color: var(--theme-color-alt);
-        color: var(--text-color);
-    }
-    body[bgcolor="#FFFFFF"] > .rt-page *[bgcolor*="F3F3F3"] {
-        background-color: var(--theme-color);
+    .loading-overlay{
+        background-color: hsla(0, 0%, 0%, .5);
+        z-index: 99;
     }
     *[background*="flexible_bg.gif"] {
         display: none;
     }
-
     .link-mybid,
     .rt-store-best-goods-main {
         background-color: var(--top-tier-store-main-bg);
     }
+    .search-end-container,
     .rt-store-best-goods-header {
         background-color: var(--top-tier-store-head-bg);
     }
@@ -145,7 +230,8 @@
         background-color: hsl(199, 100%, 5%);
         color: var(--text-color-emphasis);
     }
-    .coin-event, .promotion-event,
+    .coin-event,
+    .promotion-event,
     .main-area .column-both h3,
     .theme-category3 .rt-site-search,
     .theme-category3 .rt-subcategory-list,
@@ -160,6 +246,7 @@
         background-color: hsl(80, 100%, 9%);
         color: var(--text-color-emphasis);
     }
+
     .theme-category4 .rt-site-search,
     .theme-category4 .rt-subcategory-list,
     .theme-category6 .rt-site-search,
@@ -177,6 +264,7 @@
         background-color: hsl(25, 100%, 6%);
         color: var(--text-color-emphasis);
     }
+    .catalogue,
     .rt-page .rt-chat-message-header,
     .rt-button-primary,
     .rt-hd .active,
@@ -193,9 +281,12 @@
     .message-title,
     .rt-page > .rt-header,
     .seller-board-title,
+    .header-nav,
+    .header,
     .spotlight-section-title {
         background: var(--ruten-theme-color) !important;
     }
+    .list-cart-info-payment,
     .rt-button-primary:hover,
     .index-button:hover,
     .item-holiday-action:hover,
@@ -207,7 +298,9 @@
     body[bgcolor="#FFFFFF"] > .rt-page *[bgcolor*="FFF0E2"] {
         background: var(--ruten-theme-color-alt) !important;
     }
+    .catalogue,
     .nav li:hover,
+    .search-end-container,
     .rt-button-primary,
     .custom-store .item-spec-list .item-spec-list-item [type="checkbox"]:checked + label,
     .daily-mission-section,
@@ -226,6 +319,16 @@
     .rt-alert-security .alert-title {
         background-color: var(--alert-title) !important;
     }
+    .cart-finish-sign.is-success,
+    .item-upload-result {
+        background-color: var(--alert-success);
+        color: var(--alert-success-text);
+    }
+    .rt-alert-info {
+        background-color: var(--alert-info);
+        color: var(--alert-info-text);
+    }
+    .rt-table .addc-block .label-alarm,
     .rt-panel-highlight,
     .rt-alert-announce,
     .rt-upload-easy .rt-alert-danger,
@@ -245,8 +348,6 @@
     }
     .rt-common-base .rt-button-default:hover,
     .rt-nav-pills-link:hover,
-    .ta-tab .ta-tab-item .rt-nav-pills-link:hover,
-    .mybid-sub-tab-area.selected-buyer,
     .ebay-result-container,
     .message-flyout .message-sent .message-bubble.rtchat-message-bubble,
     .rt-amount-control-action,
@@ -266,7 +367,8 @@
     }
     .item-purchase-form {
         background-color: hsl(32, 100%, 10%);
-    }
+    } // neutral box-shadow
+    .mybid-search-filter,
     .rt-form-input,
     .rt-form-textarea,
     .mybid-form-input,
@@ -284,7 +386,10 @@
     .rt-product-card {
         box-shadow: 0 1px 2px 0 var(--black-300), 0 0 2px 0 var(--black-300);
     } // neutral border
-        .setting-container-full-page .setting-block,
+    .rt-feedback .rt-panel-default > .rt-panel-inner,
+    .rt-feedback .rt-panel-border,
+    .mybid-search-filter,
+    .setting-container-full-page .setting-block,
     .rt-bd .dialog ul,
     .rt-account-detail,
     .mybid-table td,
@@ -534,15 +639,40 @@
     .shipping-discount-section,
     .mybid-table thead tr,
     .mybid-table thead td,
+    thead tr,
+    .date-group,
+    table,
+    table thead th,
+    .tabs-nav,
+    .tabs-nav-total,
+    .nav-column .nav-link:hover,
+    .nav-list.flex-column .nav-link:hover,
     .v3-product-card .rt-form-input:disabled,
     .v3-product-card .rt-form-select:disabled,
     .v3-product-card .rt-form-textarea:disabled,
-    .v3-product-card input[type="checkbox"]:disabled + .rt-form-label:before,
+    select:not([multiple]),
+    .dataTables_wrapper .dataTables_filter input,
+    .daterangepicker .ranges li:hover,
+    .rt-store-sidebar .category-listing .category-listing-item .category-listing-item-link:hover .v3-product-card input[type="checkbox"]:disabled + .rt-form-label:before,
     .v3-product-card input[type="radio"]:disabled + .rt-form-label:before,
     body[bgcolor="#FFFFFF"] > .rt-page *[bgcolor*="DBDBDB"],
+    .rt-panel-bg .sub-title,
+    .rt-table td.addc-slot,
+    .qa-list-header,
+    .qa-tab .active,
+    .ad > div,
+    .rt-panel-bg-inner .rt-panel-title,
+    .rt-panel-inner .rt-panel-title,
+    .ta-tab .ta-tab-item .rt-nav-pills-link:hover,
+    .mybid-sub-tab-area.selected-buyer,
     input[type="checkbox"]:disabled + .rt-form-label:before,
     input[type="radio"]:disabled + .rt-form-label:before {
         background-color: var(--black-200);
+    }
+    select,
+    option,
+    table.dataTable thead .sorting_desc {
+        background-color: var(--black-300);
     }
     .rt-bd .dialog,
     #SortContainer,
@@ -561,11 +691,12 @@
     .guess-you-like-hook-inner-B {
         background: var(--primary-nav-color-inactive);
         border-color: var(--primary-nav-color-inactive);
-        color: var(--text-color);
     }
-
     .layout > header > .rt-header {
         background: hsl(35, 100%, 30%);
+    }
+    .credit-tab * {
+        background-blend-mode: overlay;
     }
     textarea[disabled],
     .disabled,
@@ -583,19 +714,29 @@
     .rt-amount-control-action:hover {
         filter: invert(1) !important;
     }
-    .credit-tab *{
-        background-blend-mode: overlay;
+    .event-image,
+    .buyer-event-img,
+    .banner-get-coupon-img {
+        filter: brightness(85%) contrast(100%);
     }
-    .shipping-discount-example {
-        filter: hue-rotate(294deg) brightness(60%) contrast(100%);
-    }
+    .rt-common-base .rt-form-input,
+    .rt-common-base .rt-form-select,
+    .rt-common-base .rt-form-textarea,
+    #divWapperBlock i.icon,
+    .nav-column.is-sidebar .icon,
+    .is-sidebar.nav-list.flex-column .icon,
+    .shipping-discount-example,
     .index-page .rt-page span[class$="-icon"],
     .index-page .rt-page div[class$="-icon"] {
         filter: invert(1) sepia(99%) saturate(0%) hue-rotate(294deg) brightness(100%) contrast(100%);
+        opacity: unset;
     }
+    .rt-nav-link:hover .rt-nav-name,
+    a.rt-nav-link:hover .rt-nav-name,
     .rt-page span[class$="-icon"],
     .rt-page div[class$="-icon"] {
         filter: sepia(99%) saturate(0%) hue-rotate(294deg) brightness(100%) contrast(100%);
+        opacity: unset;
     }
     .rt-footer-nav-item a,
     .rt-footer-nav-name,
@@ -656,14 +797,31 @@
     .item-spec-info,
     .cart-store-delivery-detail,
     .rt-panel,
+    .detail .muted,
+    .detail .txt-muted,
+    .pronav li a,
+    input[type="text"]::placeholder,
+    input[type="search"]::placeholder,
+    input[type="number"]::placeholder,
+    input[type="url"]::placeholder,
+    input[type="tel"]::placeholder,
+    input[type="submit"]::placeholder,
+    input[type="email"]::placeholder,
+    input[type="password"]::placeholder,
+    textarea::placeholder,
+    select::placeholder,
+    select:not([multiple]),
+    .delivery-group .receiver-item .receiver-item-main,
     body[bgcolor="#FFFFFF"] > .rt-page .bk13,
     body[bgcolor="#FFFFFF"] > .rt-page *[bgcolor*="DBDBDB"],
     body[bgcolor="#FFFFFF"] > .rt-page td[bgcolor="#F3F3F3"] span {
         color: var(--text-color-deemphasis) !important;
     }
     .transaction-order-info .order-info-item-content,
-    .rt-page .rt-chat-inbox,.transaction-section-main-item-content,
-    .fee-list-item-expand .fee-list-item-content, .transaction-fee-list-item .fee-list-item-content,
+    .rt-page .rt-chat-inbox,
+    .transaction-section-main-item-content,
+    .fee-list-item-expand .fee-list-item-content,
+    .transaction-fee-list-item .fee-list-item-content,
     .mybid-form-input,
     .mybid-form-select,
     .mybid-form-textarea,
@@ -694,6 +852,14 @@
     .rt-text-gray-darkest,
     .rt-text-gray-darkest,
     .v3-product-card .rt-chip,
+    .goods-page-section .goods-credit-filter-item,
+    .item-detail-table,
+    .item-misc-info,
+    .nav-column .nav-link,
+    .nav-list.flex-column .nav-link,
+    .rt-page .goods-page-section .rt-text-notice,
+    .list-cart-info-payment,
+    .rt-table > tbody > tr.rt-tr-checked > td, .rt-table > tfoot > tr.rt-tr-checked > td, .rt-table > thead > tr.rt-tr-checked > td,
     a.rt-product-card-name-wrap:hover,
     body[bgcolor="#FFFFFF"] > .rt-page .set_trans_links,
     body[bgcolor="#FFFFFF"] > .rt-page .t1623 {
@@ -759,8 +925,27 @@
     a.rt-nav-link:link,
     a.rt-nav-link:visited,
     body,
+    .number,
+    .mybid-button-default,
     .mybid-table,
+    .goods-page-section .rt-text-gray,
+    .card.has-money .price,
+    .card.has-money .number,
+    .card.has-order .price,
+    .card.has-order .number,
     .message-content-block .message-card-text,
+    .catalogue,
+    .rt-feedback .feedback-notice,
+    .daterangepicker,
+    .board-main,
+    .nav li,
+    .more-ebay-items,
+    .message-input-textarea,
+    body[bgcolor="#FFFFFF"] > .rt-page *[bgcolor*="eeeeee"],
+    body[bgcolor="#FFFFFF"] > .rt-page *[bgcolor*="f6f6f6"],
+    .index-all-category-level-one-wrap .index-nav-block.hover-nav,
+    .index-nav .index-nav-all-categories-nav,
+    .guess-you-like-hook-inner-B,
     #head_pagination .page-info .page-info-total::before,
     #head_pagination .page-info .page-info-total::after,
     body[bgcolor="#FFFFFF"] > .rt-page .text_SplitPage_4,
@@ -1034,7 +1219,31 @@
     .setting-container-full-page .setting-block-header,
     .index-header-hot-search-item a:hover,
     .index-header-hot-search-item:hover,
-    .transaction-section-header-content,.information-message-goods-name,
+    .coin-tab-item-current .coin-tab-item-link,
+    .transaction-section-header-content,
+    .information-message-goods-name,
+    .goods-page-section .rt-font-weight-semi-bold,
+    .selling-amount-block,
+    .shipping-discount-nav-item,
+    .card.has-money .title,
+    .card.has-order .title,
+    #divWapperBlock h3,
+    #divWapperBlock h2,
+    #divWapperBlock h1,
+    #divWapperBlock .h3,
+    #divWapperBlock .h2,
+    #divWapperBlock .h1,
+    .tabs-nav-total .title,
+    .card.has-prd-list .item .title,
+    .chart-legend ul,
+    .title,
+    .delivery-item .delivery-form-group .rt-form-label,
+    .qa-list-header .item-col,
+    .qa-tab .active,
+    .ta-tab .ta-tab-item .rt-nav-pills-link:hover,
+    .mybid-sub-tab-area.selected-buyer,
+    .nav-column .nav-link:hover,
+    .nav-list.flex-column .nav-link:hover,
     body[bgcolor="#FFFFFF"] > .rt-page .bk16,
     body[bgcolor="#FFFFFF"] > .rt-page .bk16b {
         color: var(--text-color-emphasis) !important;
@@ -1051,6 +1260,7 @@
     .rt-text-subcontent {
         color: inherit !important;
     }
+    .date-group:hover,
     .rt-upload-tool-item,
     .coupon {
         background: linear-gradient(var(--theme-color), var(--theme-color));
@@ -1180,6 +1390,7 @@
     .rt-label-yellow-albisolid,
     .rt-label-yellow-semisolid,
     .rt-label,
+    .mybid-button-default,
     .rt-lightbox-close-button,
     .rt-lightbox,
     .rt-modal,
@@ -1259,8 +1470,8 @@
     .v3-product-card input[type="radio"]:checked:disabled + .rt-form-label:before,
     .vue-affix.affix-top,
     .vue-affix.affix,
-
     body,
+    html,
     .my-rpoint-list-disabled .my-rpoint-list-item,
     .login-card,
     .validation-success,
@@ -1332,19 +1543,48 @@
     .rt-form-textarea,
     .item-owner-title,
     .rt-panel-header.rt-panel-title,
+    .rt-feedback .rt-panel-default,
     .rt-panel-header > .rt-panel-title,
     .rt-page .search-panel-input::placeholder,
     .setting-container-wrapper .setting-block-footer,
     input[type="checkbox"] + .rt-form-label:before,
     .mybid-table tbody tr,
+    .mybid-list tbody tr.row-odd,
+    .goods-page-section .goods-credit-filter-item,
     .setting-container-full-page .setting-block,
+    body[bgcolor="#FFFFFF"] > .rt-page *[bgcolor*="F3F3F3"],
+    .section-container,
     .transaction-section-header,
+    .buy-notpaid .rt-panel-default, .list-cart .rt-panel-default,
+    .checkout-complete-page.rt-page,
+    .rt-feedback .feedback-rating .rt-button-default.rt-button-outline,
     input[type="checkbox"]:checked:disabled + .rt-form-label:before,
     input[type="radio"] + .rt-form-label:before,
     input[type="radio"]:checked:disabled + .rt-form-label:before {
         background-color: var(--theme-color);
     }
     .card,
+    .buy-notpaid .rt-panel-default > .rt-panel-inner, .list-cart .rt-panel-default > .rt-panel-inner,
+    .page-header,
+    header,
+    footer,
+    #divWapperBlock .sidebar,
+    table.dataTable tbody tr,
+    .nav-column.is-sidebar,
+    .more-ebay-items,
+    body[bgcolor="#FFFFFF"] > .rt-page *[bgcolor*="eeeeee"],
+    body[bgcolor="#FFFFFF"] > .rt-page *[bgcolor*="f6f6f6"],
+    .is-sidebar.nav-list.flex-column,
+    .tag.tag-highlight-color,
+    .card-content.more-off::after,
+    .modal-kwad .btn-primary:hover,
+    .daterangepicker select.hourselect,
+    .daterangepicker select.minuteselect,
+    .daterangepicker select.secondselect,
+    .daterangepicker select.ampmselect,
+    .buttons-colvis,
+    .dt-button-collection .dt-button:active:not(.disabled),
+    .dt-button-collection .dt-button.active:not(.disabled),
     .notice .notice-wrap,
     .rt-account-info-block-content,
     .rt-table-hover > tbody > tr:hover > td,
@@ -1394,7 +1634,9 @@
     .rt-store-sidebar,
     .totp-box-body,
     .premium-pway,
+    .tabs-content,
     .mybid-table tbody tr.row-even,
+    .mybid-list tbody tr.row-even,
     .rt-table > tbody > tr > th,
     .rt-table > tfoot > tr > th,
     .rt-table > thead > tr > th,
@@ -1403,25 +1645,56 @@
     .rt-page .rt-tab-item-active,
     .sidebar-ad-section-border,
     .router-link-exact-active,
+    .coin-tab-item-current,
     .setting-container-full-page,
     .rt-table-hover > tbody:hover td[rowspan],
     .rt-page .sort-panel,
+    .prompt-loading,
+    .prompt,
+    .alert,
+    .prompt.has-plump,
     .rt-chat-main-page .blank-container,
+    .daterangepicker,
+    .rt-feedback .rt-panel-default > .rt-panel-inner,
+    .card.has-prd-list,
+    .rt-panel-bg .rt-panel-inner,
     .visited-button {
         background-color: var(--theme-color-alt);
     }
+    .list-group-empty,
+    .chart-area,
+    .chart-area canvas,
     .item-detail-table,
+    .card.has-prd-list .item,
+    tbody tr,
+    .item-management .rt-table > tbody > tr > td,
+    .item-management .rt-table > tfoot > tr > td,
+    .item-management .rt-table > thead > tr > td,
+    .item-management .rt-table > tbody > tr > th,
+    .item-management .rt-table > tfoot > tr > th,
+    .item-management .rt-table > thead > tr > th,
     p[class*="tidied-"],
     .store-type2 .customizable-medium.rt-tab {
-        background-color: inherit !important;
+        background-color: inherit;
         color: inherit;
     }
+    .rt-feedback .feedback-rating .rt-button-default.rt-button-outline:hover,
+    .rt-table tr:hover,
+    .qa-list-item-block:hover,
+    .qa-tab .qa-tab-list-item:hover,
+    .qa-tab .active:hover,
+    table.dataTable tbody tr:hover,
+    .tabs-nav .nav-link:hover,
+    .tabs-nav-total .nav-link:hover,
+    .coin-tab-item:hover,
     .rt-button-default:hover a,
     .rt-button-default:hover,
     .item-sell .rt-button-default:hover,
     .mybid-sub-tab-area .selected-sub-tab {
-        background-color: inherit;
+        background-color: hsl(0, 0, 10%);
         color: inherit;
-        filter: contrast(150%);
+        filter: brightness(120%) contrast(80%);
+        transition-duration: .3s;
+        transition-property: background-color;
     }
 }
